@@ -1,0 +1,109 @@
+{% comment %}
+  La Futalerie - Comment ça marche (3 étapes)
+{% endcomment %}
+
+<section class="futalerie-section {% if section.settings.background == 'beige' %}futalerie-section--beige{% endif %}">
+  <div class="futalerie-container">
+    {%- if section.settings.title != blank -%}
+      <h2 class="futalerie-section__title">{{ section.settings.title | escape }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subtitle != blank -%}
+      <p class="futalerie-section__subtitle">{{ section.settings.subtitle | escape }}</p>
+    {%- endif -%}
+
+    <div class="futalerie-process__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'step' -%}
+          <div class="futalerie-process-step" {{ block.shopify_attributes }}>
+            <div class="futalerie-process-step__number">{{ forloop.index }}</div>
+            {%- if block.settings.title != blank -%}
+              <h3 class="futalerie-process-step__title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p class="futalerie-process-step__text">{{ block.settings.text | escape }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Comment ça marche",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Comment ça marche ?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous-titre",
+      "default": "Simple, rapide, sans mauvaise surprise"
+    },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "white", "label": "Blanc" },
+        { "value": "beige", "label": "Beige" }
+      ],
+      "default": "white"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Étape",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre de l'étape",
+          "default": "Parcourez & filtrez"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Trouvez votre taille et marque préférée en quelques clics."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comment ça marche",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Parcourez & filtrez",
+            "text": "Trouvez votre taille et marque préférée en quelques clics."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Vérifiez les détails",
+            "text": "Photos multiples, mesures exactes, état transparent. Aucune mauvaise surprise."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Recevez sous 3-5 jours",
+            "text": "Expédition sous 24h, livraison suivie. Satisfait ou remboursé 14 jours."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,152 @@
+{% comment %}
+  La Futalerie - Tableau comparatif vs Vinted
+{% endcomment %}
+
+<section class="futalerie-section futalerie-section--beige">
+  <div class="futalerie-container">
+    {%- if section.settings.title != blank -%}
+      <h2 class="futalerie-section__title">{{ section.settings.title | escape }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subtitle != blank -%}
+      <p class="futalerie-section__subtitle">{{ section.settings.subtitle | escape }}</p>
+    {%- endif -%}
+
+    <div class="futalerie-comparison">
+      <table class="futalerie-comparison__table">
+        <thead>
+          <tr>
+            <th>{{ section.settings.col_left_header | default: 'Vinted' }}</th>
+            <th>{{ section.settings.col_right_header | default: 'La Futalerie' }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'row' -%}
+              <tr {{ block.shopify_attributes }}>
+                <td>{{ block.settings.left | escape }}</td>
+                <td>
+                  <span class="futalerie-comparison__check">✓</span>
+                  {{ block.settings.right | escape }}
+                </td>
+              </tr>
+            {%- endif -%}
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+
+    {%- if section.settings.cta_label != blank -%}
+      <div style="text-align:center; margin-top: 2.5rem;">
+        <a href="{{ section.settings.cta_url }}" class="btn-futalerie-primary">
+          {{ section.settings.cta_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Comparaison vs Vinted",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Pourquoi choisir La Futalerie plutôt que Vinted ?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous-titre",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "col_left_header",
+      "label": "En-tête colonne gauche",
+      "default": "Vinted"
+    },
+    {
+      "type": "text",
+      "id": "col_right_header",
+      "label": "En-tête colonne droite",
+      "default": "La Futalerie"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Bouton - Texte",
+      "default": "Voir la collection"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Bouton - Lien"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Ligne de comparaison",
+      "settings": [
+        {
+          "type": "text",
+          "id": "left",
+          "label": "Point négatif (Vinted)",
+          "default": "Qualité variable"
+        },
+        {
+          "type": "text",
+          "id": "right",
+          "label": "Point positif (La Futalerie)",
+          "default": "Sélection rigoureuse, pièces inspectées"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comparaison vs Vinted",
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "left": "Qualité variable",
+            "right": "Sélection rigoureuse, pièces inspectées"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "left": "Mesures approximatives",
+            "right": "Mesures exactes au centimètre"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "left": "Vendeurs multiples",
+            "right": "1 seul interlocuteur de confiance"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "left": "Négociations, attente",
+            "right": "Prix fixe, achat immédiat"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "left": "SAV aléatoire",
+            "right": "Retours faciles, service client réactif"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

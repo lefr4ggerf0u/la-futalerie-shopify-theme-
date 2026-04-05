@@ -1,210 +1,311 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero": {
+      "type": "futalerie-hero",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "trust-1": {
+          "type": "trust_item",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "icon": "⭐",
+            "text": "4.9/5 sur 127 avis"
           }
         },
-        "text": {
-          "type": "text",
+        "trust-2": {
+          "type": "trust_item",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "icon": "✓",
+            "text": "Livraison 24h"
           }
         },
-        "button": {
-          "type": "buttons",
+        "trust-3": {
+          "type": "trust_item",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "icon": "✓",
+            "text": "Retours faciles"
+          }
+        },
+        "trust-4": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "✓",
+            "text": "Paiement sécurisé"
           }
         }
       },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
+      "block_order": ["trust-1", "trust-2", "trust-3", "trust-4"],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "eyebrow": "Levi's · Carhartt · Dickies · Wrangler · Lee",
+        "title": "Jeans iconiques. Seconde main de confiance.",
+        "subtitle": "Levi's, Carhartt, Dickies vérifiés et mesurés. Alternative fiable pour hommes exigeants qui n'ont pas le temps de chercher sur Vinted.",
+        "cta_primary_label": "Voir la collection",
+        "cta_primary_url": "/collections/all",
+        "cta_secondary_label": "Comment ça marche ?",
+        "cta_secondary_url": "/pages/faq"
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "reviews-1": {
+      "type": "futalerie-reviews",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "r1": {
+          "type": "review",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "rating": 5,
+            "review_text": "Enfin une alternative fiable à Vinted. Les mesures étaient exactes au millimètre, le Levi's 501 en parfait état comme décrit. Expédition rapide et soignée.",
+            "author": "Thomas M.",
+            "date": "Il y a 5 jours"
           }
         },
-        "text": {
-          "type": "text",
+        "r2": {
+          "type": "review",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "rating": 5,
+            "review_text": "J'avais peur d'acheter de la seconde main en ligne, mais là aucune déception. Tout est transparent : photos réelles, état honnête, mesures précises. Je recommande.",
+            "author": "Marc L.",
+            "date": "Il y a 2 semaines"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Parfait pour ceux qui n'ont pas le temps de chercher sur Vinted. Sélection de qualité, pas de négociation, livraison rapide. C'est ma 3ème commande.",
+            "author": "Julien B.",
+            "date": "Il y a 1 semaine"
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Carhartt Double Knee authentique, en excellent état. Photos des étiquettes fournies, tout est vérifié. Service client très réactif.",
+            "author": "David R.",
+            "date": "Il y a 3 jours"
           }
         }
       },
-      "block_order": [
-        "heading",
-        "text"
-      ],
+      "block_order": ["r1", "r2", "r3", "r4"],
       "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "title": "Ils nous font confiance",
+        "subtitle": "",
+        "background": "white"
       }
     },
-    "featured_collection": {
+    "usps": {
+      "type": "futalerie-usps",
+      "blocks": {
+        "usp1": {
+          "type": "usp",
+          "settings": {
+            "icon": "🛡️",
+            "title": "100% authentique",
+            "text": "Marques vérifiées, étiquettes photographiées. Chaque pièce est inspectée avant mise en vente."
+          }
+        },
+        "usp2": {
+          "type": "usp",
+          "settings": {
+            "icon": "🔍",
+            "title": "Mesures exactes, photos réelles",
+            "text": "Mesures au centimètre près, photos non retouchées. Aucune mauvaise surprise à la réception."
+          }
+        },
+        "usp3": {
+          "type": "usp",
+          "settings": {
+            "icon": "↩️",
+            "title": "Retours faciles, service réactif",
+            "text": "14 jours pour changer d'avis. Réponse sous 24h à toutes vos questions."
+          }
+        }
+      },
+      "block_order": ["usp1", "usp2", "usp3"],
+      "settings": {
+        "title": "Pourquoi La Futalerie ?",
+        "background": "beige"
+      }
+    },
+    "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "Nouveautés",
         "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
+        "products_to_show": 4,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
+        "show_view_all": true,
+        "swipe_on_mobile": true,
         "image_ratio": "adapt",
         "show_secondary_image": true,
-        "show_vendor": false,
+        "show_vendor": true,
         "show_rating": false,
         "columns_mobile": "2",
-        "padding_top": 28,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "collage": {
-      "type": "collage",
+    "comparison": {
+      "type": "futalerie-comparison",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "c1": {
+          "type": "row",
           "settings": {
-            "collection": ""
+            "left": "Qualité variable",
+            "right": "Sélection rigoureuse, pièces inspectées"
           }
         },
-        "product": {
-          "type": "product",
+        "c2": {
+          "type": "row",
           "settings": {
-            "product": "",
-            "second_image": false
+            "left": "Mesures approximatives",
+            "right": "Mesures exactes au centimètre"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "c3": {
+          "type": "row",
           "settings": {
-            "collection": ""
+            "left": "Vendeurs multiples",
+            "right": "1 seul interlocuteur de confiance"
+          }
+        },
+        "c4": {
+          "type": "row",
+          "settings": {
+            "left": "Négociations, attente",
+            "right": "Prix fixe, achat immédiat"
+          }
+        },
+        "c5": {
+          "type": "row",
+          "settings": {
+            "left": "SAV aléatoire",
+            "right": "Retours faciles, service client réactif"
           }
         }
       },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
+      "block_order": ["c1", "c2", "c3", "c4", "c5"],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "title": "Pourquoi choisir La Futalerie plutôt que Vinted ?",
+        "col_left_header": "Vinted",
+        "col_right_header": "La Futalerie",
+        "cta_label": "Voir la collection",
+        "cta_url": "/collections/all"
       }
     },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
+    "process": {
+      "type": "futalerie-process",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "step1": {
+          "type": "step",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "title": "Parcourez & filtrez",
+            "text": "Trouvez votre taille et marque préférée en quelques clics."
           }
         },
-        "column2": {
-          "type": "column",
+        "step2": {
+          "type": "step",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "title": "Vérifiez les détails",
+            "text": "Photos multiples, mesures exactes, état transparent. Aucune mauvaise surprise."
           }
         },
-        "column3": {
-          "type": "column",
+        "step3": {
+          "type": "step",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "title": "Recevez sous 3-5 jours",
+            "text": "Expédition sous 24h, livraison suivie. Satisfait ou remboursé 14 jours."
           }
         }
       },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
+      "block_order": ["step1", "step2", "step3"],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "title": "Comment ça marche ?",
+        "subtitle": "Simple, rapide, sans mauvaise surprise",
+        "background": "white"
       }
+    },
+    "reviews-2": {
+      "type": "futalerie-reviews",
+      "blocks": {
+        "r5": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "J'ai dû retourner un article (mauvaise taille de ma part). Process super simple, remboursement rapide. Puis j'ai recommandé dans la bonne taille. Top !",
+            "author": "Antoine P.",
+            "date": "Il y a 10 jours"
+          }
+        },
+        "r6": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Je n'achète plus sur Vinted depuis que j'ai découvert La Futalerie. Qualité constante, mesures fiables, zéro prise de tête.",
+            "author": "Olivier D.",
+            "date": "Il y a 1 mois"
+          }
+        },
+        "r7": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Premier achat de seconde main et franchement bluffé. Dickies 874 comme neuf, bien emballé. J'avais des doutes mais là je suis conquis.",
+            "author": "François H.",
+            "date": "Il y a 2 semaines"
+          }
+        }
+      },
+      "block_order": ["r5", "r6", "r7"],
+      "settings": {
+        "title": "Ce qu'ils en disent",
+        "subtitle": "",
+        "background": "beige"
+      }
+    },
+    "newsletter": {
+      "type": "futalerie-newsletter",
+      "settings": {
+        "title": "Les meilleures pièces en avant-première",
+        "subtitle": "Soyez alerté des nouvelles trouvailles. Pas de spam, que des belles pièces.",
+        "button_label": "S'inscrire",
+        "note": "Pas de spam. Désinscription en 1 clic."
+      }
+    },
+    "trust-bar": {
+      "type": "futalerie-trust-bar",
+      "blocks": {
+        "tb1": {
+          "type": "item",
+          "settings": { "icon": "🔒", "text": "Paiement 100% sécurisé" }
+        },
+        "tb2": {
+          "type": "item",
+          "settings": { "icon": "📦", "text": "Expédition sous 24h" }
+        },
+        "tb3": {
+          "type": "item",
+          "settings": { "icon": "🚚", "text": "Livraison suivie" }
+        },
+        "tb4": {
+          "type": "item",
+          "settings": { "icon": "↩️", "text": "Retours faciles 14 jours" }
+        },
+        "tb5": {
+          "type": "item",
+          "settings": { "icon": "💬", "text": "Service client réactif" }
+        }
+      },
+      "block_order": ["tb1", "tb2", "tb3", "tb4", "tb5"]
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "hero",
+    "reviews-1",
+    "usps",
+    "featured-collection",
+    "comparison",
+    "process",
+    "reviews-2",
+    "newsletter",
+    "trust-bar"
   ]
 }

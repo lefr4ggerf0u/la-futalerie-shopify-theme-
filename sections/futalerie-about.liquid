@@ -1,0 +1,181 @@
+{% comment %}
+  La Futalerie - Page À propos
+{% endcomment %}
+
+<div class="futalerie-about">
+  <h1>{{ section.settings.title | escape }}</h1>
+
+  <div style="color: #6B7280; font-size: 1.05rem; margin-bottom: 2.5rem; font-style: italic;">
+    {{ section.settings.intro | escape }}
+  </div>
+
+  {%- if section.settings.story != blank -%}
+    <div style="margin-bottom: 2rem;">
+      {{ section.settings.story }}
+    </div>
+  {%- endif -%}
+
+  <h2>Notre promesse — Les 3 piliers</h2>
+
+  <div class="futalerie-about__pillars">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'pillar' -%}
+        <div class="futalerie-about__pillar" {{ block.shopify_attributes }}>
+          <h3>{{ block.settings.title | escape }}</h3>
+          <p>{{ block.settings.text | escape }}</p>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  {%- if section.settings.target_title != blank -%}
+    <h2>{{ section.settings.target_title | escape }}</h2>
+    {%- if section.settings.target_text != blank -%}
+      <div>{{ section.settings.target_text }}</div>
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- if section.settings.sustainability_title != blank -%}
+    <h2>{{ section.settings.sustainability_title | escape }}</h2>
+    {%- if section.settings.sustainability_text != blank -%}
+      <div>{{ section.settings.sustainability_text }}</div>
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- if section.settings.founder_title != blank -%}
+    <h2>{{ section.settings.founder_title | escape }}</h2>
+    {%- if section.settings.founder_text != blank -%}
+      <p>{{ section.settings.founder_text | escape }}</p>
+    {%- endif -%}
+  {%- endif -%}
+
+  <div class="futalerie-about__contact-box">
+    <h2>Des questions ?</h2>
+    <p>
+      📧 <a href="mailto:{{ section.settings.contact_email | escape }}">{{ section.settings.contact_email | escape }}</a><br>
+      ⏱️ Réponse sous 24h garantie
+    </p>
+    <div class="futalerie-about__guarantees">
+      <span class="futalerie-about__guarantee-badge">✓ Satisfait ou remboursé 14 jours</span>
+      <span class="futalerie-about__guarantee-badge">✓ Livraison suivie</span>
+      <span class="futalerie-about__guarantee-badge">✓ Paiement 100% sécurisé</span>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Page À propos",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Pourquoi La Futalerie existe"
+    },
+    {
+      "type": "text",
+      "id": "intro",
+      "label": "Phrase d'accroche",
+      "default": "La sécurité d'une boutique, les prix de la seconde main."
+    },
+    {
+      "type": "richtext",
+      "id": "story",
+      "label": "Notre histoire",
+      "default": "<p>En tant qu'amateur de workwear authentique, j'ai passé des années à chiner sur Vinted. Trouvailles incroyables... mais aussi énormément de temps perdu, de déceptions et de mauvaises surprises.</p><p>Tailles approximatives, photos trompeuses, vendeurs peu réactifs, négociations interminables. J'ai réalisé que pour des hommes de 30-50 ans avec une vie bien remplie, Vinted n'était pas adapté. On veut de la qualité, de la fiabilité, et zéro prise de tête.</p><p>C'est pour ça que j'ai créé La Futalerie : la sécurité et l'exigence d'une boutique, combinées aux prix et à l'authenticité de la seconde main.</p>"
+    },
+    {
+      "type": "text",
+      "id": "target_title",
+      "label": "Titre section 'Pour qui'",
+      "default": "Pour qui ?"
+    },
+    {
+      "type": "richtext",
+      "id": "target_text",
+      "label": "Texte section 'Pour qui'",
+      "default": "<p>La Futalerie s'adresse aux hommes de 30 à 55 ans qui :</p><ul><li>Apprécient les pièces workwear authentiques et durables</li><li>N'ont pas le temps (ou l'envie) de passer des heures sur Vinted</li><li>Veulent la tranquillité d'esprit d'un achat fiable</li><li>Cherchent une alternative responsable au neuf sans compromis sur la qualité</li></ul>"
+    },
+    {
+      "type": "text",
+      "id": "sustainability_title",
+      "label": "Titre section durabilité",
+      "default": "Notre engagement — Durabilité"
+    },
+    {
+      "type": "richtext",
+      "id": "sustainability_text",
+      "label": "Texte durabilité",
+      "default": "<p>Acheter de la seconde main, c'est :</p><ul><li>Prolonger la vie de pièces iconiques conçues pour durer</li><li>Éviter la surproduction et le gaspillage</li><li>Accéder à des modèles vintage introuvables en neuf</li><li>Faire un choix responsable sans sacrifier le style</li></ul>"
+    },
+    {
+      "type": "text",
+      "id": "founder_title",
+      "label": "Titre section fondateur",
+      "default": "Qui suis-je ?"
+    },
+    {
+      "type": "textarea",
+      "id": "founder_text",
+      "label": "Texte fondateur",
+      "default": "Passionné de workwear et de denim depuis plus de 10 ans. Ancien acheteur compulsif sur Vinted devenu curateur exigeant. J'expédie vos commandes sous 24h avec le même soin que si je vous les remettais en main propre."
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Email de contact",
+      "default": "contact@lafutalerie.com"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pillar",
+      "name": "Pilier",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Sélection rigoureuse"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Je ne mets en ligne que des pièces que je porterais moi-même."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page À propos",
+      "blocks": [
+        {
+          "type": "pillar",
+          "settings": {
+            "title": "Sélection rigoureuse",
+            "text": "Je ne mets en ligne que des pièces que je porterais moi-même. Chaque jean, chaque pantalon est inspecté couture par couture. Les marques iconiques uniquement, en excellent ou très bon état."
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "title": "Transparence totale",
+            "text": "Photos réelles, non retouchées. Mesures au centimètre près. État décrit honnêtement, défauts éventuels mentionnés. Ce que vous voyez est exactement ce que vous recevez."
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "title": "Service client humain",
+            "text": "Pas de robot, pas de FAQ générique. Je réponds personnellement, généralement sous 24h. Retours faciles si la pièce ne convient pas."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

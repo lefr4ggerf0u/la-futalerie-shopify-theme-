@@ -1,0 +1,85 @@
+{% comment %}
+  La Futalerie - Barre de réassurance (paiement, livraison, etc.)
+{% endcomment %}
+
+<div class="futalerie-trust-bar">
+  <div class="futalerie-trust-bar__items">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'item' -%}
+        <div class="futalerie-trust-bar__item" {{ block.shopify_attributes }}>
+          <span class="icon">{{ block.settings.icon }}</span>
+          <span>{{ block.settings.text | escape }}</span>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Barre de réassurance",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icône (emoji)",
+          "default": "🔒"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Paiement sécurisé"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barre de réassurance",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "icon": "🔒",
+            "text": "Paiement 100% sécurisé"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "📦",
+            "text": "Expédition sous 24h"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "🚚",
+            "text": "Livraison suivie"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "↩️",
+            "text": "Retours faciles 14 jours"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "💬",
+            "text": "Service client réactif"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

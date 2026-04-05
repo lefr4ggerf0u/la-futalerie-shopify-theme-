@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "main": {
+      "type": "futalerie-about",
+      "blocks": {
+        "pillar-1": {
+          "type": "pillar",
+          "settings": {
+            "title": "Sélection rigoureuse",
+            "text": "Je ne mets en ligne que des pièces que je porterais moi-même. Chaque jean, chaque pantalon est inspecté couture par couture. Les marques iconiques uniquement, en excellent ou très bon état."
+          }
+        },
+        "pillar-2": {
+          "type": "pillar",
+          "settings": {
+            "title": "Transparence totale",
+            "text": "Photos réelles, non retouchées. Mesures au centimètre près. État décrit honnêtement, défauts éventuels mentionnés. Ce que vous voyez est exactement ce que vous recevez."
+          }
+        },
+        "pillar-3": {
+          "type": "pillar",
+          "settings": {
+            "title": "Service client humain",
+            "text": "Pas de robot, pas de FAQ générique. Je réponds personnellement, généralement sous 24h. Retours faciles si la pièce ne convient pas."
+          }
+        }
+      },
+      "block_order": ["pillar-1", "pillar-2", "pillar-3"],
+      "settings": {
+        "title": "Pourquoi La Futalerie existe",
+        "intro": "La sécurité d'une boutique, les prix de la seconde main.",
+        "contact_email": "contact@lafutalerie.com"
+      }
+    }
+  },
+  "order": ["main"]
+}

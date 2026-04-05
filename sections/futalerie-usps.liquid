@@ -1,0 +1,120 @@
+{% comment %}
+  La Futalerie - USPs Section (3 colonnes)
+{% endcomment %}
+
+<section class="futalerie-section {% if section.settings.background == 'beige' %}futalerie-section--beige{% endif %}">
+  <div class="futalerie-container">
+    {%- if section.settings.title != blank -%}
+      <h2 class="futalerie-section__title">{{ section.settings.title | escape }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subtitle != blank -%}
+      <p class="futalerie-section__subtitle">{{ section.settings.subtitle | escape }}</p>
+    {%- endif -%}
+
+    <div class="futalerie-usps__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'usp' -%}
+          <div class="futalerie-usp" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != blank -%}
+              <div class="futalerie-usp__icon">{{ block.settings.icon }}</div>
+            {%- endif -%}
+            {%- if block.settings.title != blank -%}
+              <h3 class="futalerie-usp__title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p class="futalerie-usp__text">{{ block.settings.text | escape }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nos avantages (USPs)",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Pourquoi La Futalerie ?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous-titre",
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "white", "label": "Blanc" },
+        { "value": "beige", "label": "Beige" }
+      ],
+      "default": "beige"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "Avantage",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icône (emoji)",
+          "default": "✓"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Authenticité garantie"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Marques vérifiées, étiquettes photographiées."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nos avantages (USPs)",
+      "blocks": [
+        {
+          "type": "usp",
+          "settings": {
+            "icon": "🛡️",
+            "title": "100% authentique",
+            "text": "Marques vérifiées, étiquettes photographiées. Chaque pièce est inspectée avant mise en vente."
+          }
+        },
+        {
+          "type": "usp",
+          "settings": {
+            "icon": "🔍",
+            "title": "Mesures exactes, photos réelles",
+            "text": "Mesures au centimètre près, photos non retouchées. Aucune mauvaise surprise à la réception."
+          }
+        },
+        {
+          "type": "usp",
+          "settings": {
+            "icon": "↩️",
+            "title": "Retours faciles, service réactif",
+            "text": "14 jours pour changer d'avis. Réponse sous 24h à toutes vos questions."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

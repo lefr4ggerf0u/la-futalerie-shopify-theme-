@@ -1,0 +1,884 @@
+/* =========================================
+   LA FUTALERIE - Custom Theme Styles
+   Based on Dawn by Shopify
+   ========================================= */
+
+/* --- Variables --- */
+:root {
+  --lf-cream: #FDFCFA;
+  --lf-beige: #F5F0E8;
+  --lf-charcoal: #2B2B2B;
+  --lf-indigo: #4A5568;
+  --lf-camel: #C4A882;
+  --lf-green: #2D5016;
+  --lf-green-hover: #3a6b1e;
+  --lf-border: #E5E1DA;
+  --lf-text-light: #6B7280;
+
+  --lf-font-heading: 'DM Serif Display', Georgia, serif;
+  --lf-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --lf-radius: 4px;
+  --lf-shadow: 0 2px 8px rgba(43, 43, 43, 0.08);
+  --lf-shadow-hover: 0 4px 16px rgba(43, 43, 43, 0.12);
+}
+
+/* --- Global overrides --- */
+body {
+  font-family: var(--lf-font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--lf-charcoal);
+  background-color: var(--lf-cream);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--lf-font-heading);
+  line-height: 1.2;
+  color: var(--lf-charcoal);
+}
+
+a {
+  color: var(--lf-indigo);
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.futalerie-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background-color: var(--lf-charcoal);
+}
+
+.futalerie-hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.futalerie-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(43, 43, 43, 0.80) 0%,
+    rgba(43, 43, 43, 0.30) 60%,
+    rgba(43, 43, 43, 0.10) 100%
+  );
+}
+
+.futalerie-hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 3rem 1.5rem 2.5rem;
+  color: #FFFFFF;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.futalerie-hero__eyebrow {
+  display: inline-block;
+  font-family: var(--lf-font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lf-camel);
+  margin-bottom: 1rem;
+}
+
+.futalerie-hero__title {
+  font-family: var(--lf-font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #FFFFFF;
+  margin: 0 0 1rem;
+  line-height: 1.15;
+}
+
+.futalerie-hero__subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255,255,255,0.88);
+  margin: 0 0 2rem;
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+.futalerie-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.futalerie-hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.futalerie-hero__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.9);
+}
+
+.futalerie-hero__trust-item .icon {
+  color: var(--lf-camel);
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+.btn-futalerie-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  background-color: var(--lf-green);
+  color: #FFFFFF;
+  font-family: var(--lf-font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid var(--lf-green);
+  border-radius: var(--lf-radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  min-height: 44px;
+}
+
+.btn-futalerie-primary:hover,
+.btn-futalerie-primary:focus {
+  background-color: var(--lf-green-hover);
+  border-color: var(--lf-green-hover);
+  color: #FFFFFF;
+}
+
+.btn-futalerie-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-family: var(--lf-font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: var(--lf-radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  min-height: 44px;
+}
+
+.btn-futalerie-secondary:hover,
+.btn-futalerie-secondary:focus {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+/* Dark variant (on white backgrounds) */
+.btn-futalerie-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  background-color: transparent;
+  color: var(--lf-charcoal);
+  font-family: var(--lf-font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid var(--lf-charcoal);
+  border-radius: var(--lf-radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  min-height: 44px;
+}
+
+.btn-futalerie-outline:hover {
+  background-color: var(--lf-charcoal);
+  color: #FFFFFF;
+}
+
+/* Override Dawn's buy button to green */
+.product-form__submit,
+.shopify-payment-button__button--unbranded {
+  background-color: var(--lf-green) !important;
+  border-color: var(--lf-green) !important;
+  font-family: var(--lf-font-body) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  min-height: 52px !important;
+}
+
+.product-form__submit:hover {
+  background-color: var(--lf-green-hover) !important;
+  border-color: var(--lf-green-hover) !important;
+}
+
+/* =========================================
+   SECTION WRAPPERS
+   ========================================= */
+.futalerie-section {
+  padding: 4rem 1.5rem;
+}
+
+.futalerie-section--beige {
+  background-color: var(--lf-beige);
+}
+
+.futalerie-section--dark {
+  background-color: var(--lf-charcoal);
+  color: #FFFFFF;
+}
+
+.futalerie-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.futalerie-section__title {
+  font-family: var(--lf-font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+
+.futalerie-section__subtitle {
+  text-align: center;
+  color: var(--lf-text-light);
+  font-size: 1.05rem;
+  margin: 0 0 2.5rem;
+}
+
+/* =========================================
+   REVIEWS
+   ========================================= */
+.futalerie-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.futalerie-review-card {
+  background: #FFFFFF;
+  border: 1px solid var(--lf-border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: var(--lf-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.futalerie-review-card__stars {
+  display: flex;
+  gap: 2px;
+  color: #F59E0B;
+  font-size: 1rem;
+}
+
+.futalerie-review-card__text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--lf-charcoal);
+  flex: 1;
+  font-style: italic;
+}
+
+.futalerie-review-card__text::before {
+  content: '"';
+  font-size: 1.4rem;
+  color: var(--lf-camel);
+  line-height: 0;
+  vertical-align: -0.3em;
+  margin-right: 2px;
+}
+
+.futalerie-review-card__author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.futalerie-review-card__name {
+  font-weight: 600;
+  color: var(--lf-charcoal);
+}
+
+.futalerie-review-card__date {
+  color: var(--lf-text-light);
+}
+
+.futalerie-reviews__cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* =========================================
+   USPs (3 columns)
+   ========================================= */
+.futalerie-usps__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.futalerie-usp {
+  text-align: center;
+  padding: 1rem;
+}
+
+.futalerie-usp__icon {
+  width: 56px;
+  height: 56px;
+  background-color: var(--lf-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+}
+
+.futalerie-usp__title {
+  font-family: var(--lf-font-heading);
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+}
+
+.futalerie-usp__text {
+  font-size: 0.95rem;
+  color: var(--lf-text-light);
+  line-height: 1.65;
+}
+
+/* =========================================
+   PROCESS (How it works)
+   ========================================= */
+.futalerie-process__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  position: relative;
+}
+
+.futalerie-process-step {
+  text-align: center;
+  padding: 1rem;
+}
+
+.futalerie-process-step__number {
+  width: 48px;
+  height: 48px;
+  background-color: var(--lf-camel);
+  color: var(--lf-charcoal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--lf-font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 auto 1.25rem;
+}
+
+.futalerie-process-step__title {
+  font-family: var(--lf-font-heading);
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+}
+
+.futalerie-process-step__text {
+  font-size: 0.9rem;
+  color: var(--lf-text-light);
+  line-height: 1.65;
+}
+
+/* =========================================
+   COMPARISON TABLE (vs Vinted)
+   ========================================= */
+.futalerie-comparison {
+  overflow-x: auto;
+}
+
+.futalerie-comparison__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.futalerie-comparison__table th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-family: var(--lf-font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+  border-bottom: 2px solid var(--lf-border);
+}
+
+.futalerie-comparison__table th:first-child {
+  color: var(--lf-text-light);
+  width: 50%;
+}
+
+.futalerie-comparison__table th:last-child {
+  color: var(--lf-green);
+  background-color: rgba(45, 80, 22, 0.05);
+  border-radius: 6px 6px 0 0;
+}
+
+.futalerie-comparison__table td {
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid var(--lf-border);
+  line-height: 1.5;
+}
+
+.futalerie-comparison__table td:last-child {
+  background-color: rgba(45, 80, 22, 0.04);
+  font-weight: 500;
+  color: var(--lf-charcoal);
+}
+
+.futalerie-comparison__table td:first-child {
+  color: var(--lf-text-light);
+}
+
+.futalerie-comparison__table tr:last-child td {
+  border-bottom: none;
+}
+
+.futalerie-comparison__check {
+  color: var(--lf-green);
+  margin-right: 0.4rem;
+}
+
+/* =========================================
+   TRUST BAR
+   ========================================= */
+.futalerie-trust-bar {
+  background-color: var(--lf-charcoal);
+  color: #FFFFFF;
+  padding: 1.25rem 1.5rem;
+}
+
+.futalerie-trust-bar__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.futalerie-trust-bar__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.futalerie-trust-bar__item .icon {
+  color: var(--lf-camel);
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   ABOUT PAGE
+   ========================================= */
+.futalerie-about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.futalerie-about h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 2rem;
+}
+
+.futalerie-about h2 {
+  font-size: 1.6rem;
+  margin: 2.5rem 0 0.75rem;
+}
+
+.futalerie-about p {
+  color: var(--lf-charcoal);
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+}
+
+.futalerie-about ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.futalerie-about ul li {
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+
+.futalerie-about__pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.futalerie-about__pillar {
+  background: var(--lf-beige);
+  border-left: 4px solid var(--lf-green);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 var(--lf-radius) var(--lf-radius) 0;
+}
+
+.futalerie-about__pillar h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+.futalerie-about__pillar p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: var(--lf-text-light);
+}
+
+.futalerie-about__contact-box {
+  background: var(--lf-beige);
+  border: 1px solid var(--lf-border);
+  border-radius: 6px;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.futalerie-about__contact-box h2 {
+  margin-top: 0;
+}
+
+.futalerie-about__guarantees {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.futalerie-about__guarantee-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #FFFFFF;
+  border: 1px solid var(--lf-border);
+  padding: 0.4rem 0.8rem;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* =========================================
+   FAQ PAGE
+   ========================================= */
+.futalerie-faq {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.futalerie-faq h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 0.5rem;
+}
+
+.futalerie-faq__intro {
+  color: var(--lf-text-light);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+.futalerie-faq__group {
+  margin-bottom: 2.5rem;
+}
+
+.futalerie-faq__group-title {
+  font-family: var(--lf-font-heading);
+  font-size: 1.3rem;
+  color: var(--lf-indigo);
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--lf-border);
+}
+
+.futalerie-faq__item {
+  border-bottom: 1px solid var(--lf-border);
+}
+
+.futalerie-faq__question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  user-select: none;
+  list-style: none;
+  gap: 1rem;
+}
+
+.futalerie-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.futalerie-faq__question::after {
+  content: '+';
+  font-size: 1.4rem;
+  color: var(--lf-text-light);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+details[open] .futalerie-faq__question::after {
+  transform: rotate(45deg);
+}
+
+.futalerie-faq__answer {
+  padding: 0 0 1.25rem;
+  color: var(--lf-charcoal);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* =========================================
+   PRODUCT PAGE - Trust badges
+   ========================================= */
+.futalerie-product-trust {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: var(--lf-beige);
+  border-radius: var(--lf-radius);
+  border: 1px solid var(--lf-border);
+}
+
+.futalerie-product-trust__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--lf-charcoal);
+}
+
+.futalerie-product-trust__item .check {
+  color: var(--lf-green);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.futalerie-product-shipping {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--lf-text-light);
+  line-height: 1.8;
+}
+
+.futalerie-product-shipping strong {
+  color: var(--lf-charcoal);
+}
+
+/* =========================================
+   COLLECTION PAGE
+   ========================================= */
+.collection-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--lf-green);
+  color: #FFFFFF;
+  padding: 0.3rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* =========================================
+   NEWSLETTER OVERRIDE
+   ========================================= */
+.futalerie-newsletter {
+  background: var(--lf-charcoal);
+  color: #FFFFFF;
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+}
+
+.futalerie-newsletter__title {
+  font-family: var(--lf-font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #FFFFFF;
+  margin: 0 0 0.5rem;
+}
+
+.futalerie-newsletter__subtitle {
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 2rem;
+}
+
+.futalerie-newsletter__form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.futalerie-newsletter__input {
+  flex: 1 1 260px;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  color: #FFFFFF;
+  font-size: 1rem;
+  border-radius: var(--lf-radius);
+  outline: none;
+  min-height: 44px;
+}
+
+.futalerie-newsletter__input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.futalerie-newsletter__input:focus {
+  border-color: var(--lf-camel);
+}
+
+.futalerie-newsletter__submit {
+  padding: 0.85rem 1.5rem;
+  background: var(--lf-camel);
+  color: var(--lf-charcoal);
+  font-weight: 700;
+  border: none;
+  border-radius: var(--lf-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  min-height: 44px;
+  transition: opacity 0.2s;
+}
+
+.futalerie-newsletter__submit:hover {
+  opacity: 0.9;
+}
+
+.futalerie-newsletter__note {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* =========================================
+   HEADER overrides
+   ========================================= */
+.header__heading-link {
+  font-family: var(--lf-font-heading);
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  color: var(--lf-charcoal);
+}
+
+/* =========================================
+   PRODUCT CARD overrides
+   ========================================= */
+.card-wrapper .card {
+  border: 1px solid var(--lf-border);
+  border-radius: 6px;
+  box-shadow: var(--lf-shadow);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  overflow: hidden;
+}
+
+.card-wrapper .card:hover {
+  box-shadow: var(--lf-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.card__content {
+  padding: 1rem !important;
+}
+
+.card__heading {
+  font-family: var(--lf-font-heading);
+  font-size: 1.05rem;
+}
+
+/* =========================================
+   MOBILE optimizations
+   ========================================= */
+@media (max-width: 749px) {
+  .futalerie-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .futalerie-hero {
+    min-height: 70vh;
+    align-items: flex-end;
+  }
+
+  .futalerie-hero__content {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .futalerie-hero__trust {
+    gap: 0.75rem 1rem;
+  }
+
+  .futalerie-comparison__table th,
+  .futalerie-comparison__table td {
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
+  }
+
+  .futalerie-trust-bar__items {
+    gap: 0.75rem 1.5rem;
+  }
+}
+
+@media (min-width: 750px) {
+  .futalerie-hero {
+    min-height: 65vh;
+  }
+
+  .futalerie-hero__content {
+    padding: 5rem 3rem 3rem;
+  }
+
+  .futalerie-section {
+    padding: 5rem 3rem;
+  }
+}
+
+@media (min-width: 990px) {
+  .futalerie-hero__content {
+    padding: 6rem 4rem 4rem;
+  }
+}

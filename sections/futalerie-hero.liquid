@@ -1,0 +1,168 @@
+{% comment %}
+  La Futalerie - Hero Section
+  Custom hero with overlay, double CTA, and trust bar
+{% endcomment %}
+
+<section class="futalerie-hero">
+  {%- if section.settings.image != blank -%}
+    {{
+      section.settings.image
+      | image_url: width: 1800
+      | image_tag:
+        class: 'futalerie-hero__image',
+        loading: 'eager',
+        fetchpriority: 'high',
+        widths: '375, 550, 750, 1100, 1500, 1780',
+        sizes: '100vw'
+    }}
+  {%- else -%}
+    <div class="futalerie-hero__image" style="background: linear-gradient(135deg, #2B2B2B 0%, #4A5568 100%);"></div>
+  {%- endif -%}
+
+  <div class="futalerie-hero__overlay"></div>
+
+  <div class="futalerie-hero__content">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="futalerie-hero__eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+
+    <h1 class="futalerie-hero__title">{{ section.settings.title | escape }}</h1>
+
+    {%- if section.settings.subtitle != blank -%}
+      <p class="futalerie-hero__subtitle">{{ section.settings.subtitle | escape }}</p>
+    {%- endif -%}
+
+    <div class="futalerie-hero__ctas">
+      {%- if section.settings.cta_primary_label != blank -%}
+        <a href="{{ section.settings.cta_primary_url }}" class="btn-futalerie-primary">
+          {{ section.settings.cta_primary_label | escape }}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.cta_secondary_label != blank -%}
+        <a href="{{ section.settings.cta_secondary_url }}" class="btn-futalerie-secondary">
+          {{ section.settings.cta_secondary_label | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="futalerie-hero__trust">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'trust_item' -%}
+          <div class="futalerie-hero__trust-item" {{ block.shopify_attributes }}>
+            <span class="icon">{{ block.settings.icon }}</span>
+            <span>{{ block.settings.text | escape }}</span>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero La Futalerie",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image de fond"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texte au-dessus du titre",
+      "default": "Levi's · Carhartt · Dickies · Wrangler · Lee"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre principal",
+      "default": "Jeans iconiques. Seconde main de confiance."
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Sous-titre",
+      "default": "Levi's, Carhartt, Dickies vérifiés et mesurés. Alternative fiable pour hommes exigeants qui n'ont pas le temps de chercher sur Vinted."
+    },
+    {
+      "type": "text",
+      "id": "cta_primary_label",
+      "label": "Bouton principal - Texte",
+      "default": "Voir la collection"
+    },
+    {
+      "type": "url",
+      "id": "cta_primary_url",
+      "label": "Bouton principal - Lien"
+    },
+    {
+      "type": "text",
+      "id": "cta_secondary_label",
+      "label": "Bouton secondaire - Texte",
+      "default": "Comment ça marche ?"
+    },
+    {
+      "type": "url",
+      "id": "cta_secondary_url",
+      "label": "Bouton secondaire - Lien"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Badge de confiance",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icône (emoji)",
+          "default": "✓"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Livraison suivie"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero La Futalerie",
+      "blocks": [
+        {
+          "type": "trust_item",
+          "settings": {
+            "icon": "⭐",
+            "text": "4.9/5 sur 127 avis"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "icon": "✓",
+            "text": "Livraison 24h"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "icon": "✓",
+            "text": "Retours faciles"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "icon": "✓",
+            "text": "Paiement sécurisé"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

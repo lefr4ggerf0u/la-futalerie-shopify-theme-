@@ -1,7 +1,150 @@
-# Dawn
+# La Futalerie — Thème Shopify
 
-[![Build status](https://github.com/shopify/dawn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/ci.yml?query=branch%3Amain)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=informational)](/.github/CONTRIBUTING.md)
+Thème Shopify personnalisé pour **La Futalerie**, boutique de jeans et pantalons de marque (Levi's, Carhartt, Dickies, Wrangler, Lee) de seconde main.
+
+Basé sur **Dawn 15.4.1** (thème officiel gratuit Shopify), customisé pour une expérience de conversion optimisée.
+
+---
+
+## Installation dans Shopify
+
+### Méthode 1 — Via GitHub (recommandée)
+
+1. Aller dans **Shopify Admin → Boutique en ligne → Thèmes**
+2. Cliquer **Ajouter un thème → Se connecter à GitHub**
+3. Autoriser Shopify à accéder à votre GitHub
+4. Sélectionner le repo `la-futalerie-shopify-theme`
+5. Cliquer **Importer du GitHub**
+6. Prévisualiser → **Publier**
+
+### Méthode 2 — Upload ZIP
+
+1. Télécharger ce repo en ZIP (bouton Code → Download ZIP)
+2. **Shopify Admin → Boutique en ligne → Thèmes → Ajouter un thème → Télécharger un fichier ZIP**
+3. Prévisualiser → Publier
+
+---
+
+## Après l'installation — Configuration Shopify
+
+### 1. Navigation (menus)
+
+Dans **Admin → Boutique en ligne → Navigation** :
+
+**Menu principal** (handle : `main-menu`) :
+- Accueil → `/`
+- Pantalons → `/collections/all`
+- À propos → `/pages/a-propos`
+- FAQ → `/pages/faq`
+- Contact → `/pages/contact`
+
+### 2. Pages à créer
+
+Dans **Admin → Boutique en ligne → Pages** :
+
+| Titre | Handle | Template |
+|-------|--------|----------|
+| À propos | `a-propos` | `page.about` |
+| FAQ | `faq` | `page.faq` |
+| Contact | `contact` | `page.contact` |
+
+Pour chaque page :
+1. Créer la page avec le bon titre
+2. Dans la section "Modèle de thème", sélectionner le bon template
+
+### 3. Collections
+
+Dans **Admin → Produits → Collections** :
+
+Créer une collection principale :
+- Nom : `Pantalons`
+- Handle : `all` (ou utiliser la collection automatique Shopify)
+- Description : "Jeans et pantalons Levi's, Carhartt, Dickies, Wrangler, Lee — sélection experte de seconde main."
+
+Pour les filtres (Marque, Taille), aller dans **Admin → Boutique en ligne → Navigation → Menus de filtres** et créer des filtres basés sur les tags produit.
+
+### 4. Ajouter vos produits
+
+Format recommandé pour le titre :
+```
+Levi's 501 - Taille 32/34 - Excellent état
+```
+
+**Tags recommandés** (pour les filtres) :
+- Marque : `marque-levis`, `marque-carhartt`, `marque-dickies`, `marque-wrangler`, `marque-lee`
+- Taille : `taille-28`, `taille-30`, `taille-32`, `taille-34`, etc.
+- État : `etat-excellent`, `etat-tres-bon`, `etat-bon`
+
+**Description produit** — Structure recommandée :
+```
+Marque : Levi's
+Modèle : 501
+Taille étiquette : 32W / 34L
+État : Excellent
+
+Mesures réelles (à plat) :
+- Tour de taille : 42 cm (x2 = 84 cm)
+- Longueur totale : 108 cm
+- Entrejambe : 82 cm
+- Largeur cuisse : 30 cm
+- Ouverture bas : 19 cm
+
+[Description de la pièce, particularités, défauts éventuels]
+```
+
+### 5. Photo hero homepage
+
+Dans l'éditeur de thème (Admin → Boutique en ligne → Thèmes → Personnaliser) :
+- Cliquer sur la section **Hero La Futalerie**
+- Uploader une photo de jeans/workwear (idéalement 1800px de large)
+
+### 6. Paramètres importants
+
+Dans **Admin → Paramètres** :
+- **Paiements** : Activer PayPal, Apple Pay, Google Pay
+- **Expédition** : Configurer Colissimo (4,90€ + gratuit dès 80€)
+- **Emails** : Personnaliser les emails transactionnels
+- **Checkout** : Activer le paiement sans compte
+
+---
+
+## Customisations effectuées
+
+### Design
+- Palette de couleurs vintage/workwear (blanc cassé, charcoal, vert forêt, camel)
+- Typographie : DM Serif Display (titres) + Inter (corps)
+- Cards produit avec bordure et ombre légère
+
+### Sections custom
+| Fichier | Description |
+|---------|-------------|
+| `sections/futalerie-hero.liquid` | Hero plein écran avec overlay, double CTA, trust bar |
+| `sections/futalerie-reviews.liquid` | Avis clients (cards avec étoiles) |
+| `sections/futalerie-usps.liquid` | 3 colonnes avantages |
+| `sections/futalerie-process.liquid` | Comment ça marche (3 étapes) |
+| `sections/futalerie-comparison.liquid` | Tableau comparatif vs Vinted |
+| `sections/futalerie-trust-bar.liquid` | Barre de réassurance (paiement, livraison…) |
+| `sections/futalerie-newsletter.liquid` | Inscription newsletter |
+| `sections/futalerie-about.liquid` | Contenu page À propos |
+| `sections/futalerie-faq.liquid` | FAQ avec accordéons |
+
+### Templates
+- `templates/index.json` — Homepage avec 9 sections
+- `templates/product.json` — Fiche produit en français avec badges de confiance
+- `templates/collection.json` — Collection avec filtres et barre de réassurance
+- `templates/page.about.json` — Page À propos
+- `templates/page.faq.json` — Page FAQ complète
+
+---
+
+## Apps recommandées (post-lancement)
+
+- **Avis** : Judge.me (gratuit) ou Loox
+- **Emails** : Klaviyo (panier abandonné, séquences)
+- **Chat** : Tidio (gratuit) ou Gorgias
+- **Analytics** : Google Analytics 4 (via Shopify)
+
+---
 
 [Getting started](#getting-started) |
 [Staying up to date with Dawn changes](#staying-up-to-date-with-dawn-changes) |

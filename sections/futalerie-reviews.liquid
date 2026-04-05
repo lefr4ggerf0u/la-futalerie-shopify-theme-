@@ -1,0 +1,161 @@
+{% comment %}
+  La Futalerie - Reviews Section
+  Testimonials with star ratings
+{% endcomment %}
+
+<section class="futalerie-section {% if section.settings.background == 'beige' %}futalerie-section--beige{% endif %}">
+  <div class="futalerie-container">
+    {%- if section.settings.title != blank -%}
+      <h2 class="futalerie-section__title">{{ section.settings.title | escape }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subtitle != blank -%}
+      <p class="futalerie-section__subtitle">{{ section.settings.subtitle | escape }}</p>
+    {%- endif -%}
+
+    <div class="futalerie-reviews__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'review' -%}
+          <div class="futalerie-review-card" {{ block.shopify_attributes }}>
+            <div class="futalerie-review-card__stars">
+              {%- assign rating = block.settings.rating | default: 5 -%}
+              {%- for i in (1..rating) -%}★{%- endfor -%}
+            </div>
+            <p class="futalerie-review-card__text">{{ block.settings.review_text | escape }}</p>
+            <div class="futalerie-review-card__author">
+              <span class="futalerie-review-card__name">{{ block.settings.author | escape }}</span>
+              <span class="futalerie-review-card__date">{{ block.settings.date | escape }}</span>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.cta_label != blank -%}
+      <div class="futalerie-reviews__cta">
+        <a href="{{ section.settings.cta_url }}" class="btn-futalerie-outline">
+          {{ section.settings.cta_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Avis clients",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Ils nous font confiance"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous-titre",
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "white", "label": "Blanc" },
+        { "value": "beige", "label": "Beige" }
+      ],
+      "default": "white"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Bouton - Texte",
+      "default": ""
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Bouton - Lien"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Avis",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "label": "Note"
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Texte de l'avis",
+          "default": "Enfin une alternative fiable à Vinted."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Prénom + initiale",
+          "default": "Thomas M."
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date",
+          "default": "Il y a 5 jours"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avis clients",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Enfin une alternative fiable à Vinted. Les mesures étaient exactes au millimètre, le Levi's 501 en parfait état comme décrit. Expédition rapide et soignée.",
+            "author": "Thomas M.",
+            "date": "Il y a 5 jours"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "J'avais peur d'acheter de la seconde main en ligne, mais là aucune déception. Tout est transparent : photos réelles, état honnête, mesures précises. Je recommande.",
+            "author": "Marc L.",
+            "date": "Il y a 2 semaines"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Parfait pour ceux qui n'ont pas le temps de chercher sur Vinted. Sélection de qualité, pas de négociation, livraison rapide. C'est ma 3ème commande.",
+            "author": "Julien B.",
+            "date": "Il y a 1 semaine"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Carhartt Double Knee authentique, en excellent état. Photos des étiquettes fournies, tout est vérifié. Service client très réactif.",
+            "author": "David R.",
+            "date": "Il y a 3 jours"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

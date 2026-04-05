@@ -14,19 +14,31 @@
         "products_per_page": 16,
         "columns_desktop": 4,
         "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "show_vendor": false,
+        "show_secondary_image": true,
+        "show_vendor": true,
         "show_rating": false,
         "enable_filtering": true,
         "enable_sorting": true,
+        "filter_type": "drawer",
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "trust-bar": {
+      "type": "futalerie-trust-bar",
+      "blocks": {
+        "tb1": { "type": "item", "settings": { "icon": "🔒", "text": "Paiement sécurisé" } },
+        "tb2": { "type": "item", "settings": { "icon": "📦", "text": "Expédition sous 24h" } },
+        "tb3": { "type": "item", "settings": { "icon": "↩️", "text": "Retours 14 jours" } },
+        "tb4": { "type": "item", "settings": { "icon": "✓", "text": "Pièces vérifiées" } }
+      },
+      "block_order": ["tb1", "tb2", "tb3", "tb4"]
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "trust-bar"
   ]
 }
