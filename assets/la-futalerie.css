@@ -5,28 +5,28 @@
 
 /* --- Variables --- */
 :root {
-  --lf-cream: #FDFCFA;
-  --lf-beige: #F5F0E8;
-  --lf-charcoal: #2B2B2B;
+  --lf-cream: #FFFFFF;
+  --lf-beige: #F5F5F5;
+  --lf-charcoal: #11151C;
   --lf-indigo: #4A5568;
   --lf-camel: #C4A882;
-  --lf-green: #2D5016;
-  --lf-green-hover: #3a6b1e;
-  --lf-border: #E5E1DA;
+  --lf-green: #000000;
+  --lf-green-hover: #222222;
+  --lf-border: #E8E8E8;
   --lf-text-light: #6B7280;
 
-  --lf-font-heading: 'DM Serif Display', Georgia, serif;
-  --lf-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --lf-font-heading: 'Jost', system-ui, sans-serif;
+  --lf-font-body: 'Poppins', system-ui, -apple-system, sans-serif;
 
-  --lf-radius: 4px;
-  --lf-shadow: 0 2px 8px rgba(43, 43, 43, 0.08);
-  --lf-shadow-hover: 0 4px 16px rgba(43, 43, 43, 0.12);
+  --lf-radius: 8px;
+  --lf-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  --lf-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.10);
 }
 
 /* --- Global overrides --- */
 body {
   font-family: var(--lf-font-body);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
   color: var(--lf-charcoal);
   background-color: var(--lf-cream);
@@ -35,12 +35,14 @@ body {
 h1, h2, h3, h4, h5, h6,
 .h0, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: var(--lf-font-heading);
+  font-weight: 600;
   line-height: 1.2;
   color: var(--lf-charcoal);
+  letter-spacing: -0.01em;
 }
 
 a {
-  color: var(--lf-indigo);
+  color: var(--lf-charcoal);
 }
 
 /* =========================================
@@ -69,9 +71,9 @@ a {
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(43, 43, 43, 0.80) 0%,
-    rgba(43, 43, 43, 0.30) 60%,
-    rgba(43, 43, 43, 0.10) 100%
+    rgba(17, 21, 28, 0.82) 0%,
+    rgba(17, 21, 28, 0.35) 55%,
+    rgba(17, 21, 28, 0.08) 100%
   );
 }
 
@@ -281,9 +283,9 @@ a {
 .futalerie-review-card {
   background: #FFFFFF;
   border: 1px solid var(--lf-border);
-  border-radius: 6px;
+  border-radius: var(--lf-radius);
   padding: 1.5rem;
-  box-shadow: var(--lf-shadow);
+  box-shadow: none;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -886,7 +888,7 @@ details[open] .futalerie-faq__question::after {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  background-color: var(--lf-green);
+  background-color: var(--lf-charcoal);
   color: #FFFFFF;
 }
 
@@ -1041,8 +1043,9 @@ details[open] .futalerie-faq__question::after {
    ========================================= */
 .header__heading-link {
   font-family: var(--lf-font-heading);
-  font-size: 1.5rem;
-  letter-spacing: -0.01em;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--lf-charcoal);
 }
 
@@ -1051,24 +1054,26 @@ details[open] .futalerie-faq__question::after {
    ========================================= */
 .card-wrapper .card {
   border: 1px solid var(--lf-border);
-  border-radius: 6px;
-  box-shadow: var(--lf-shadow);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  border-radius: var(--lf-radius);
+  box-shadow: none;
+  transition: border-color 0.2s ease;
   overflow: hidden;
 }
 
 .card-wrapper .card:hover {
-  box-shadow: var(--lf-shadow-hover);
-  transform: translateY(-2px);
+  border-color: var(--lf-charcoal);
+  box-shadow: none;
+  transform: none;
 }
 
 .card__content {
-  padding: 1rem !important;
+  padding: 0.85rem !important;
 }
 
 .card__heading {
   font-family: var(--lf-font-heading);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 /* =========================================
