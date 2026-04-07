@@ -723,6 +723,103 @@ details[open] .futalerie-faq__question::after {
 }
 
 /* =========================================
+   COLLECTION PAGE
+   ========================================= */
+
+/* Banner badges */
+.lf-collection-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.lf-collection-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background-color: var(--lf-green);
+  color: #FFFFFF;
+}
+
+.lf-collection-badge--outline {
+  background-color: transparent;
+  border: 1.5px solid var(--lf-charcoal);
+  color: var(--lf-charcoal);
+}
+
+.lf-collection-tagline {
+  font-size: 0.95rem;
+  color: var(--lf-text-light);
+  margin: 0.5rem 0 0;
+  line-height: 1.6;
+}
+
+/* Product card — "Pièce unique" badge on image */
+.lf-card-badge-unique {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background-color: var(--lf-charcoal);
+  color: #FFFFFF;
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Product card — measurements & condition row */
+.lf-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.3rem 0 0.1rem;
+}
+
+.lf-card-size {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--lf-charcoal);
+  background-color: var(--lf-beige);
+  border: 1px solid var(--lf-border);
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  font-family: var(--lf-font-body);
+}
+
+.lf-card-cond {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.1rem 0.45rem;
+  border-radius: 99px;
+}
+
+.lf-card-cond--excellent {
+  background-color: #DCFCE7;
+  color: #166534;
+}
+
+.lf-card-cond--good {
+  background-color: #FEF9C3;
+  color: #854D0E;
+}
+
+.lf-card-cond--fair {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+/* =========================================
    NEWSLETTER OVERRIDE
    ========================================= */
 .futalerie-newsletter {

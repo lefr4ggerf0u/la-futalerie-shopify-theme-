@@ -12,6 +12,10 @@
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <div class="collection-hero__text-wrapper">
+      <div class="lf-collection-badges">
+        <span class="lf-collection-badge">100% Grandes tailles</span>
+        <span class="lf-collection-badge lf-collection-badge--outline">Mesures détaillées</span>
+      </div>
       <h1 class="collection-hero__title">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | escape -}}
@@ -19,6 +23,8 @@
 
       {%- if section.settings.show_collection_description -%}
         <div class="collection-hero__description rte">{{ collection.description }}</div>
+      {%- else -%}
+        <p class="lf-collection-tagline">Chaque pièce est mesurée et vérifiée. Tour de taille, entrejambe, état — tout est là avant d'acheter.</p>
       {%- endif -%}
     </div>
 

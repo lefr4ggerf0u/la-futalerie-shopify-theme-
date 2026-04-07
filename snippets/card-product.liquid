@@ -140,6 +140,7 @@
                 {{- 'products.product.on_sale' | t -}}
               </span>
             {%- endif -%}
+            <span class="lf-card-badge-unique">Pièce unique</span>
           </div>
         </div>
       </div>
@@ -164,6 +165,35 @@
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
               <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
+            {%- endif -%}
+
+            {%- liquid
+              assign card_waist  = card_product.metafields.measurements.waist.value
+              assign card_inseam = card_product.metafields.measurements.inseam.value
+              assign card_cond   = card_product.metafields.condition.state.value
+            -%}
+            {%- if card_waist or card_inseam or card_cond -%}
+              <div class="lf-card-meta">
+                {%- if card_waist or card_inseam -%}
+                  <span class="lf-card-size">
+                    {%- if card_waist -%}W{{ card_waist }}{%- endif -%}
+                    {%- if card_waist and card_inseam -%}&thinsp;·&thinsp;{%- endif -%}
+                    {%- if card_inseam -%}L{{ card_inseam }}{%- endif -%}
+                  </span>
+                {%- endif -%}
+                {%- if card_cond -%}
+                  {%- liquid
+                    assign cond_cls = 'lf-card-cond--excellent'
+                    if card_cond == 'Très bon'
+                      assign cond_cls = 'lf-card-cond--good'
+                    endif
+                    if card_cond == 'Bon'
+                      assign cond_cls = 'lf-card-cond--fair'
+                    endif
+                  -%}
+                  <span class="lf-card-cond {{ cond_cls }}">{{ card_cond }}</span>
+                {%- endif -%}
+              </div>
             {%- endif -%}
 
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
