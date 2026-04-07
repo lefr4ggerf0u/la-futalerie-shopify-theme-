@@ -16,11 +16,8 @@
         "price": {
           "type": "price"
         },
-        "trust-badges": {
-          "type": "custom_liquid",
-          "settings": {
-            "liquid": "<div class=\"futalerie-product-trust\"><div class=\"futalerie-product-trust__item\"><span class=\"check\">✓</span> Authentique garanti</div><div class=\"futalerie-product-trust__item\"><span class=\"check\">✓</span> Photos réelles non retouchées</div><div class=\"futalerie-product-trust__item\"><span class=\"check\">✓</span> Retour facile 14 jours</div><div class=\"futalerie-product-trust__item\"><span class=\"check\">✓</span> Pièce unique</div></div>"
-          }
+        "measurements": {
+          "type": "futalerie_measurements"
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -43,24 +40,6 @@
         },
         "description": {
           "type": "description"
-        },
-        "mesures": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Mesures",
-            "icon": "ruler",
-            "content": "<p>Les mesures détaillées sont indiquées dans la description du produit.<br>Comment mesurer : posez le pantalon à plat et mesurez.</p><ul><li>Tour de taille (cm)</li><li>Longueur totale (cm)</li><li>Entrejambe (cm)</li><li>Largeur cuisse (cm)</li><li>Ouverture bas (cm)</li></ul>",
-            "page": ""
-          }
-        },
-        "etat-authenticite": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "État & Authenticité",
-            "icon": "leather",
-            "content": "<p>Chaque pièce est inspectée et vérifiée avant mise en vente. Les étiquettes de marque sont photographiées. L'état est décrit honnêtement — tout défaut éventuel est mentionné.</p>",
-            "page": ""
-          }
         },
         "entretien": {
           "type": "collapsible_tab",
@@ -91,13 +70,11 @@
         "vendor",
         "title",
         "price",
-        "trust-badges",
+        "measurements",
         "variant_picker",
         "buy_buttons",
         "shipping-info",
         "description",
-        "mesures",
-        "etat-authenticite",
         "entretien",
         "livraison-retours",
         "share"

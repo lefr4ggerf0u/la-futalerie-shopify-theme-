@@ -672,6 +672,8 @@
                     <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
                   {%- endif -%}
                 </product-recommendations>
+              {%- when 'futalerie_measurements' -%}
+                {% render 'futalerie-product-measurements', product: product %}
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
             {%- endcase -%}
@@ -734,6 +736,38 @@
 
     <script type="application/ld+json">
       {{ product | structured_data }}
+    </script>
+
+    {%- comment -%} Sticky ATC — mobile only {%- endcomment -%}
+    <div class="lf-sticky-atc" id="LfStickyAtc-{{ section.id }}" aria-hidden="true">
+      <div class="lf-sticky-atc__inner page-width">
+        <div class="lf-sticky-atc__info">
+          <span class="lf-sticky-atc__title">{{ product.title | truncate: 36 }}</span>
+          <span class="lf-sticky-atc__price">{{ product.selected_or_first_available_variant.price | money }}</span>
+        </div>
+        <button
+          type="button"
+          class="lf-sticky-atc__btn"
+          id="LfStickyAtcBtn-{{ section.id }}"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var bar = document.getElementById('LfStickyAtc-{{ section.id }}');
+        var mainBtn = document.querySelector('#MainProduct-{{ section.id }} .product-form__submit');
+        var stickyBtn = document.getElementById('LfStickyAtcBtn-{{ section.id }}');
+        if (!bar || !mainBtn) return;
+        stickyBtn.addEventListener('click', function () { mainBtn.click(); });
+        var observer = new IntersectionObserver(function (entries) {
+          var hidden = !entries[0].isIntersecting;
+          bar.classList.toggle('lf-sticky-atc--visible', hidden);
+          bar.setAttribute('aria-hidden', hidden ? 'false' : 'true');
+        }, { threshold: 0.1 });
+        observer.observe(mainBtn);
+      })();
     </script>
   </div>
 </product-info>
@@ -1463,6 +1497,11 @@
           "default": false
         }
       ]
+    },
+    {
+      "type": "futalerie_measurements",
+      "name": "Mesures La Futalerie",
+      "limit": 1
     },
     {
       "type": "icon-with-text",

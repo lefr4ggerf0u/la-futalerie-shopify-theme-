@@ -1,0 +1,124 @@
+{% comment %}
+  La Futalerie — Measurements & Condition Block
+  Reads metafields: measurements.*, condition.*, custom.original_price
+{% endcomment %}
+
+{%- liquid
+  assign m_waist  = product.metafields.measurements.waist.value
+  assign m_inseam = product.metafields.measurements.inseam.value
+  assign m_thigh  = product.metafields.measurements.thigh.value
+  assign m_hip    = product.metafields.measurements.hip.value
+  assign m_rise   = product.metafields.measurements.rise.value
+
+  assign cond_state = product.metafields.condition.state.value
+  assign cond_desc  = product.metafields.condition.description.value
+  assign orig_price = product.metafields.custom.original_price.value
+
+  assign has_measurements = false
+  if m_waist or m_inseam or m_thigh or m_hip or m_rise
+    assign has_measurements = true
+  endif
+-%}
+
+{%- comment -%} — Condition & badges row — {%- endcomment -%}
+<div class="lf-product-meta">
+  {%- if cond_state != blank -%}
+    {%- liquid
+      assign cond_class = 'lf-condition--excellent'
+      if cond_state == 'Très bon'
+        assign cond_class = 'lf-condition--good'
+      endif
+      if cond_state == 'Bon'
+        assign cond_class = 'lf-condition--fair'
+      endif
+    -%}
+    <span class="lf-condition-badge {{ cond_class }}">{{ cond_state }}</span>
+  {%- endif -%}
+
+  <span class="lf-unique-badge">Pièce unique</span>
+
+  {%- if orig_price != blank -%}
+    <span class="lf-orig-price">Neuf : <s>{{ orig_price }}€</s></span>
+  {%- endif -%}
+</div>
+
+{%- if cond_desc != blank -%}
+  <p class="lf-condition-desc">{{ cond_desc }}</p>
+{%- endif -%}
+
+{%- comment -%} — Measurements table — {%- endcomment -%}
+{%- if has_measurements -%}
+  <div class="lf-measurements">
+    <div class="lf-measurements__header">
+      <span class="lf-measurements__title">Mesures détaillées</span>
+      <span class="lf-measurements__note">Mesuré à plat — doubler pour le tour</span>
+    </div>
+    <table class="lf-measurements__table">
+      <thead>
+        <tr>
+          <th>Mesure</th>
+          <th>Valeur</th>
+          <th>Équiv. étiquette</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- if m_waist != blank -%}
+          <tr>
+            <td>Tour de taille</td>
+            <td><strong>{{ m_waist }} cm</strong></td>
+            <td class="lf-measurements__equiv">
+              {%- if m_waist < 90 -%}W32-33
+              {%- elsif m_waist < 95 -%}W34-35
+              {%- elsif m_waist < 100 -%}W36-37
+              {%- elsif m_waist < 105 -%}W38-39
+              {%- elsif m_waist < 110 -%}W40-41
+              {%- else -%}W42+
+              {%- endif -%}
+            </td>
+          </tr>
+        {%- endif -%}
+        {%- if m_inseam != blank -%}
+          <tr>
+            <td>Entrejambe</td>
+            <td><strong>{{ m_inseam }} cm</strong></td>
+            <td class="lf-measurements__equiv">
+              {%- if m_inseam < 76 -%}L28-29
+              {%- elsif m_inseam < 81 -%}L30-31
+              {%- elsif m_inseam < 86 -%}L32-33
+              {%- else -%}L34+
+              {%- endif -%}
+            </td>
+          </tr>
+        {%- endif -%}
+        {%- if m_thigh != blank -%}
+          <tr>
+            <td>Tour de cuisse</td>
+            <td><strong>{{ m_thigh }} cm</strong></td>
+            <td></td>
+          </tr>
+        {%- endif -%}
+        {%- if m_hip != blank -%}
+          <tr>
+            <td>Tour de hanches</td>
+            <td><strong>{{ m_hip }} cm</strong></td>
+            <td></td>
+          </tr>
+        {%- endif -%}
+        {%- if m_rise != blank -%}
+          <tr>
+            <td>Hauteur de taille</td>
+            <td><strong>{{ m_rise }} cm</strong></td>
+            <td></td>
+          </tr>
+        {%- endif -%}
+      </tbody>
+    </table>
+    <p class="lf-measurements__tip">
+      <strong>Comment mesurer ?</strong> Posez le pantalon à plat sur une surface plane. Pour le tour de taille, mesurez la ceinture et multipliez par 2.
+    </p>
+  </div>
+{%- else -%}
+  <div class="lf-measurements lf-measurements--empty">
+    <p>Mesures disponibles dans la description du produit.</p>
+  </div>
+{%- endif -%}

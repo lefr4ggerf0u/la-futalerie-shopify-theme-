@@ -832,6 +832,246 @@ details[open] .futalerie-faq__question::after {
 }
 
 /* =========================================
+   PRODUCT PAGE — Measurements & Condition
+   ========================================= */
+
+/* Meta row (condition badge + pièce unique + orig price) */
+.lf-product-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.lf-condition-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.lf-condition--excellent {
+  background-color: #DCFCE7;
+  color: #166534;
+}
+
+.lf-condition--good {
+  background-color: #FEF9C3;
+  color: #854D0E;
+}
+
+.lf-condition--fair {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.lf-unique-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background-color: var(--lf-beige);
+  color: var(--lf-charcoal);
+  border: 1px solid var(--lf-border);
+}
+
+.lf-orig-price {
+  font-size: 0.88rem;
+  color: var(--lf-text-light);
+  margin-left: 0.25rem;
+}
+
+.lf-orig-price s {
+  text-decoration: line-through;
+}
+
+.lf-condition-desc {
+  font-size: 0.88rem;
+  color: var(--lf-text-light);
+  margin: 0.25rem 0 0.75rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Measurements table */
+.lf-measurements {
+  margin: 1rem 0;
+  border: 1px solid var(--lf-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.lf-measurements__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  background-color: var(--lf-beige);
+  border-bottom: 1px solid var(--lf-border);
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.lf-measurements__title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--lf-charcoal);
+}
+
+.lf-measurements__note {
+  font-size: 0.78rem;
+  color: var(--lf-text-light);
+}
+
+.lf-measurements__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.lf-measurements__table thead th {
+  padding: 0.5rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--lf-text-light);
+  border-bottom: 1px solid var(--lf-border);
+  background-color: #FAFAFA;
+}
+
+.lf-measurements__table tbody tr {
+  border-bottom: 1px solid var(--lf-border);
+}
+
+.lf-measurements__table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.lf-measurements__table td {
+  padding: 0.6rem 1rem;
+  color: var(--lf-charcoal);
+  vertical-align: middle;
+}
+
+.lf-measurements__table td:first-child {
+  color: var(--lf-text-light);
+  width: 45%;
+}
+
+.lf-measurements__equiv {
+  font-size: 0.8rem;
+  color: var(--lf-indigo);
+  font-weight: 500;
+}
+
+.lf-measurements__tip {
+  padding: 0.65rem 1rem;
+  font-size: 0.82rem;
+  color: var(--lf-text-light);
+  line-height: 1.55;
+  margin: 0;
+  border-top: 1px solid var(--lf-border);
+  background-color: var(--lf-beige);
+}
+
+.lf-measurements--empty {
+  padding: 1rem;
+  color: var(--lf-text-light);
+  font-size: 0.9rem;
+  background-color: var(--lf-beige);
+}
+
+.lf-measurements--empty p {
+  margin: 0;
+}
+
+/* =========================================
+   PRODUCT PAGE — Sticky ATC (mobile)
+   ========================================= */
+.lf-sticky-atc {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: #FFFFFF;
+  border-top: 1px solid var(--lf-border);
+  box-shadow: 0 -4px 16px rgba(43, 43, 43, 0.12);
+  transform: translateY(100%);
+  transition: transform 0.25s ease;
+  padding: 0.75rem 1rem;
+}
+
+.lf-sticky-atc--visible {
+  transform: translateY(0);
+}
+
+.lf-sticky-atc__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.lf-sticky-atc__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.lf-sticky-atc__title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--lf-charcoal);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lf-sticky-atc__price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--lf-charcoal);
+}
+
+.lf-sticky-atc__btn {
+  flex-shrink: 0;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--lf-green);
+  color: #FFFFFF;
+  font-family: var(--lf-font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--lf-radius);
+  cursor: pointer;
+  min-height: 48px;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.lf-sticky-atc__btn:hover {
+  background-color: var(--lf-green-hover);
+}
+
+@media (max-width: 749px) {
+  .lf-sticky-atc {
+    display: block;
+  }
+}
+
+/* =========================================
    MOBILE optimizations
    ========================================= */
 @media (max-width: 749px) {
