@@ -22,15 +22,23 @@
     {{ 'la-futalerie.css' | asset_url | stylesheet_tag }}
 
     <title>
-      {{ page_title }}
-      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {%- if request.page_type == 'index' -%}
+        {%- if page_title != blank and page_title != shop.name -%}
+          {{ page_title }}
+        {%- else -%}
+          La Futalerie — Jeans & Pantalons Grande Taille Homme Seconde Main | Levi's, Carhartt
+        {%- endif -%}
+      {%- else -%}
+        {{ page_title }}
+        {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+        {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+        {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {%- endif -%}
     </title>
 
-    {% if page_description %}
+    {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
+    {%- endif -%}
 
     {% render 'meta-tags' %}
 
@@ -301,6 +309,32 @@
       if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');
       }
+    </script>
+
+    {%- comment -%} Schema.org — Organization (toutes les pages) {%- endcomment -%}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "La Futalerie",
+      "url": "{{ shop.url }}",
+      "description": "Première friperie en ligne 100% grandes tailles hommes. Levi's, Carhartt, Dickies d'occasion avec mesures précises, contrôle qualité et retour gratuit.",
+      "logo": {%- if settings.favicon != blank -%}
+        {
+          "@type": "ImageObject",
+          "url": "{{ settings.favicon | image_url: width: 512 }}"
+        }
+      {%- else -%}null{%- endif -%},
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": "French"
+      },
+      "offers": {
+        "@type": "Offer",
+        "description": "Jeans et pantalons grande taille homme seconde main. Tailles XL à 5XL."
+      }
+    }
     </script>
   </head>
 
