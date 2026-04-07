@@ -1,0 +1,79 @@
+{% comment %}
+  La Futalerie — Brands strip
+  Displays brand names (or logos if images are set) in a horizontal row
+{% endcomment %}
+
+<section class="futalerie-brands futalerie-section--beige">
+  <div class="futalerie-container">
+    {%- if section.settings.title != blank -%}
+      <p class="futalerie-brands__label">{{ section.settings.title | escape }}</p>
+    {%- endif -%}
+    <div class="futalerie-brands__list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'brand' -%}
+          <div class="futalerie-brands__item" {{ block.shopify_attributes }}>
+            {%- if block.settings.logo != blank -%}
+              {{
+                block.settings.logo
+                | image_url: width: 200
+                | image_tag:
+                  class: 'futalerie-brands__logo',
+                  alt: block.settings.name,
+                  loading: 'lazy',
+                  widths: '100, 150, 200'
+              }}
+            {%- else -%}
+              <span class="futalerie-brands__name">{{ block.settings.name | escape }}</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Marques La Futalerie",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Texte au-dessus",
+      "default": "Les meilleures marques, en seconde main"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "brand",
+      "name": "Marque",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nom de la marque",
+          "default": "Levi's"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo (optionnel)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marques La Futalerie",
+      "blocks": [
+        { "type": "brand", "settings": { "name": "Levi's" } },
+        { "type": "brand", "settings": { "name": "Carhartt" } },
+        { "type": "brand", "settings": { "name": "Dickies" } },
+        { "type": "brand", "settings": { "name": "Wrangler" } },
+        { "type": "brand", "settings": { "name": "Lee" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

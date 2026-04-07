@@ -124,6 +124,50 @@
         "background": "beige"
       }
     },
+    "brands": {
+      "type": "futalerie-brands",
+      "blocks": {
+        "b1": { "type": "brand", "settings": { "name": "Levi's" } },
+        "b2": { "type": "brand", "settings": { "name": "Carhartt" } },
+        "b3": { "type": "brand", "settings": { "name": "Dickies" } },
+        "b4": { "type": "brand", "settings": { "name": "Wrangler" } },
+        "b5": { "type": "brand", "settings": { "name": "Lee" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5"],
+      "settings": {
+        "title": "Les meilleures marques, en seconde main"
+      }
+    },
+    "seo-text": {
+      "type": "futalerie-seo-text",
+      "blocks": {
+        "s1": {
+          "type": "paragraph",
+          "settings": {
+            "subheading": "La première friperie 100% grandes tailles hommes",
+            "text": "<p>La Futalerie est la première boutique en ligne 100% dédiée aux grandes tailles hommes. Fini de fouiller pendant des heures pour trouver UN jean à votre taille. Notre catalogue est entièrement composé de pantalons et jeans grandes tailles (XL à 5XL) de marques premium comme Levi's, Carhartt, Dickies, Wrangler et Lee.</p>"
+          }
+        },
+        "s2": {
+          "type": "paragraph",
+          "settings": {
+            "subheading": "Des mesures précises, zéro mauvaise surprise",
+            "text": "<p>Le problème numéro 1 de la seconde main, c'est les tailles incorrectes. C'est pourquoi chaque article est mesuré précisément : tour de taille, longueur de jambe, tour de cuisse. Plus de doute avant d'acheter.</p>"
+          }
+        },
+        "s3": {
+          "type": "paragraph",
+          "settings": {
+            "subheading": "3 fois moins cher que le neuf",
+            "text": "<p>Un Levi's 501 neuf grande taille coûte 90 à 120€. Chez La Futalerie : 30 à 40€. Même qualité, meilleur prix. Chaque pièce est contrôlée et photographiée sous tous les angles.</p>"
+          }
+        }
+      },
+      "block_order": ["s1", "s2", "s3"],
+      "settings": {
+        "heading": "Pourquoi La Futalerie ?"
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -299,13 +343,15 @@
   },
   "order": [
     "hero",
-    "reviews-1",
-    "usps",
+    "trust-bar",
     "featured-collection",
+    "brands",
+    "usps",
+    "reviews-1",
     "comparison",
     "process",
     "reviews-2",
-    "newsletter",
-    "trust-bar"
+    "seo-text",
+    "newsletter"
   ]
 }

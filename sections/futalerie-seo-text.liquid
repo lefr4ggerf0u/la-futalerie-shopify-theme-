@@ -1,0 +1,106 @@
+{% comment %}
+  La Futalerie — SEO text block
+  Keyword-rich content block for homepage SEO (H2 + paragraphs)
+{% endcomment %}
+
+<section class="futalerie-seo futalerie-section">
+  <div class="futalerie-container futalerie-seo__inner">
+    <div class="futalerie-seo__content">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="futalerie-seo__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'paragraph' -%}
+          <div class="futalerie-seo__block" {{ block.shopify_attributes }}>
+            {%- if block.settings.subheading != blank -%}
+              <h3 class="futalerie-seo__subheading">{{ block.settings.subheading | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <div class="futalerie-seo__text rte">{{ block.settings.text }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="futalerie-seo__pillars">
+      <div class="futalerie-seo__pillar">
+        <span class="futalerie-seo__pillar-icon">📐</span>
+        <strong>Mesures précises</strong>
+        <p>Tour de taille, entrejambe, cuisse — chaque cm mesuré à plat.</p>
+      </div>
+      <div class="futalerie-seo__pillar">
+        <span class="futalerie-seo__pillar-icon">✓</span>
+        <strong>Contrôle qualité</strong>
+        <p>Chaque pièce inspectée, photographiée sous tous les angles.</p>
+      </div>
+      <div class="futalerie-seo__pillar">
+        <span class="futalerie-seo__pillar-icon">💶</span>
+        <strong>3× moins cher</strong>
+        <p>Un Levi's 501 grande taille neuf : 90-120€. Ici : 30-40€.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bloc SEO La Futalerie",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre H2",
+      "default": "Pourquoi La Futalerie ?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "name": "Paragraphe SEO",
+      "settings": [
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Sous-titre H3"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Texte"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bloc SEO La Futalerie",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "settings": {
+            "subheading": "La première friperie 100% grandes tailles hommes",
+            "text": "<p>La Futalerie est la première boutique en ligne 100% dédiée aux grandes tailles hommes. Fini de fouiller pendant des heures pour trouver UN jean à votre taille. Notre catalogue est entièrement composé de pantalons et jeans grandes tailles (XL à 5XL) de marques premium comme Levi's, Carhartt, Dickies, Wrangler et Lee.</p>"
+          }
+        },
+        {
+          "type": "paragraph",
+          "settings": {
+            "subheading": "Des mesures précises, zéro mauvaise surprise",
+            "text": "<p>Le problème numéro 1 de la seconde main, c'est les tailles incorrectes. C'est pourquoi chaque article est mesuré précisément : tour de taille, longueur de jambe, tour de cuisse. Plus de doute avant d'acheter.</p>"
+          }
+        },
+        {
+          "type": "paragraph",
+          "settings": {
+            "subheading": "3 fois moins cher que le neuf",
+            "text": "<p>Un Levi's 501 neuf grande taille coûte 90 à 120€. Chez La Futalerie : 30 à 40€. Même qualité, meilleur prix. Chaque pièce est contrôlée et photographiée sous tous les angles — si un défaut existe, vous le verrez sur les photos.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

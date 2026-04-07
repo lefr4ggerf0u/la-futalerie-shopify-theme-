@@ -707,6 +707,153 @@ details[open] .futalerie-faq__question::after {
 }
 
 /* =========================================
+   BRANDS STRIP
+   ========================================= */
+.futalerie-brands {
+  padding: 2rem 1.5rem;
+}
+
+.futalerie-brands__label {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lf-text-light);
+  margin: 0 0 1.5rem;
+}
+
+.futalerie-brands__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem 2.5rem;
+}
+
+.futalerie-brands__item {
+  display: flex;
+  align-items: center;
+}
+
+.futalerie-brands__logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.futalerie-brands__logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.futalerie-brands__name {
+  font-family: var(--lf-font-heading);
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  color: var(--lf-charcoal);
+  opacity: 0.45;
+  letter-spacing: -0.01em;
+  transition: opacity 0.2s ease;
+  user-select: none;
+}
+
+.futalerie-brands__name:hover {
+  opacity: 0.85;
+}
+
+@media (min-width: 750px) {
+  .futalerie-brands {
+    padding: 2.5rem 3rem;
+  }
+  .futalerie-brands__list {
+    gap: 1rem 4rem;
+  }
+}
+
+/* =========================================
+   SEO TEXT BLOCK
+   ========================================= */
+.futalerie-seo__inner {
+  display: grid;
+  gap: 3rem;
+}
+
+.futalerie-seo__heading {
+  font-family: var(--lf-font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0 0 1.5rem;
+  color: var(--lf-charcoal);
+}
+
+.futalerie-seo__block {
+  margin-bottom: 1.5rem;
+}
+
+.futalerie-seo__block:last-child {
+  margin-bottom: 0;
+}
+
+.futalerie-seo__subheading {
+  font-family: var(--lf-font-heading);
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+  color: var(--lf-charcoal);
+}
+
+.futalerie-seo__text {
+  font-size: 0.95rem;
+  color: var(--lf-text-light);
+  line-height: 1.75;
+}
+
+.futalerie-seo__text p {
+  margin: 0;
+}
+
+.futalerie-seo__pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.futalerie-seo__pillar {
+  background: var(--lf-beige);
+  border-left: 3px solid var(--lf-green);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 var(--lf-radius) var(--lf-radius) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.futalerie-seo__pillar-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.futalerie-seo__pillar strong {
+  font-size: 0.95rem;
+  color: var(--lf-charcoal);
+}
+
+.futalerie-seo__pillar p {
+  font-size: 0.85rem;
+  color: var(--lf-text-light);
+  margin: 0;
+  line-height: 1.55;
+}
+
+@media (min-width: 990px) {
+  .futalerie-seo__inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* =========================================
    COLLECTION PAGE
    ========================================= */
 .collection-hero-badge {
@@ -721,10 +868,6 @@ details[open] .futalerie-faq__question::after {
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
-
-/* =========================================
-   COLLECTION PAGE
-   ========================================= */
 
 /* Banner badges */
 .lf-collection-badges {
