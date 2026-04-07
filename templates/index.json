@@ -35,8 +35,8 @@
       "block_order": ["trust-1", "trust-2", "trust-3", "trust-4"],
       "settings": {
         "eyebrow": "Levi's · Carhartt · Dickies · Wrangler · Lee",
-        "title": "Jeans iconiques. Seconde main de confiance.",
-        "subtitle": "Levi's, Carhartt, Dickies vérifiés et mesurés. Alternative fiable pour hommes exigeants qui n'ont pas le temps de chercher sur Vinted.",
+        "title": "Enfin des jeans à ta taille.",
+        "subtitle": "Levi's, Carhartt, Dickies vérifiés et mesurés. Mesures précises, contrôle qualité, retour gratuit — zéro mauvaise surprise.",
         "cta_primary_label": "Voir la collection",
         "cta_primary_url": "/collections/all",
         "cta_secondary_label": "Comment ça marche ?",
@@ -50,7 +50,7 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Enfin une alternative fiable à Vinted. Les mesures étaient exactes au millimètre, le Levi's 501 en parfait état comme décrit. Expédition rapide et soignée.",
+            "review_text": "Les mesures étaient exactes au millimètre, le Levi's 501 en parfait état comme décrit. Expédition rapide et soignée. Je recommande sans hésiter.",
             "author": "Thomas M.",
             "date": "Il y a 5 jours"
           }
@@ -68,7 +68,7 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Parfait pour ceux qui n'ont pas le temps de chercher sur Vinted. Sélection de qualité, pas de négociation, livraison rapide. C'est ma 3ème commande.",
+            "review_text": "Sélection de qualité, mesures fiables, pas de négociation, livraison rapide. C'est ma 3ème commande. Je ne cherche plus ailleurs.",
             "author": "Julien B.",
             "date": "Il y a 1 semaine"
           }
@@ -184,8 +184,8 @@
       },
       "block_order": ["c1", "c2", "c3", "c4", "c5"],
       "settings": {
-        "title": "Pourquoi choisir La Futalerie plutôt que Vinted ?",
-        "col_left_header": "Vinted",
+        "title": "Pourquoi choisir La Futalerie ?",
+        "col_left_header": "Les plateformes classiques",
         "col_right_header": "La Futalerie",
         "cta_label": "Voir la collection",
         "cta_url": "/collections/all"
@@ -239,7 +239,7 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Je n'achète plus sur Vinted depuis que j'ai découvert La Futalerie. Qualité constante, mesures fiables, zéro prise de tête.",
+            "review_text": "Qualité constante, mesures fiables, zéro prise de tête. Depuis que j'ai découvert La Futalerie, je ne regarde plus ailleurs.",
             "author": "Olivier D.",
             "date": "Il y a 1 mois"
           }
