@@ -69,12 +69,14 @@ a {
 .futalerie-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(17, 21, 28, 0.82) 0%,
-    rgba(17, 21, 28, 0.35) 55%,
-    rgba(17, 21, 28, 0.08) 100%
-  );
+  background:
+    linear-gradient(
+      to top,
+      rgba(17, 21, 28, 0.92) 0%,
+      rgba(17, 21, 28, 0.70) 40%,
+      rgba(17, 21, 28, 0.45) 70%,
+      rgba(17, 21, 28, 0.25) 100%
+    );
 }
 
 .futalerie-hero__content {
@@ -94,7 +96,7 @@ a {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--lf-camel);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 1rem;
 }
 
