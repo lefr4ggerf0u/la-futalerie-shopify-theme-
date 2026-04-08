@@ -1046,11 +1046,12 @@ details[open] .futalerie-faq__question::after {
    HEADER overrides
    ========================================= */
 .header__heading-link {
-  font-family: var(--lf-font-heading);
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   color: var(--lf-charcoal);
+  font-style: normal;
 }
 
 /* =========================================
