@@ -1,0 +1,8 @@
+<svg width="188" height="44" viewBox="0 0 188 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="La Futalerie">
+  <!-- Mark: LF monogram in black square -->
+  <rect width="40" height="40" x="0" y="2" rx="2" fill="#11151C"/>
+  <text x="20" y="28" font-family="'Bebas Neue', 'Arial Narrow', sans-serif" font-size="20" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">LF</text>
+  <!-- Wordmark -->
+  <text x="50" y="18" font-family="'Poppins', 'Helvetica Neue', sans-serif" font-size="7.5" font-weight="300" fill="#11151C" letter-spacing="5">LA</text>
+  <text x="50" y="36" font-family="'Bebas Neue', 'Arial Narrow', sans-serif" font-size="18" fill="#11151C" letter-spacing="3">FUTALERIE</text>
+</svg>

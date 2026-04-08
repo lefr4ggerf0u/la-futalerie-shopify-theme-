@@ -1046,11 +1046,24 @@ details[open] .futalerie-faq__question::after {
    HEADER overrides
    ========================================= */
 .header__heading-link {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  color: var(--lf-charcoal);
+  display: flex;
+  align-items: center;
+}
+
+.lf-logo-svg {
+  display: flex;
+  align-items: center;
+}
+
+.lf-logo-svg svg {
+  height: 36px;
+  width: auto;
+}
+
+@media (max-width: 749px) {
+  .lf-logo-svg svg {
+    height: 28px;
+  }
 }
 
 /* =========================================
