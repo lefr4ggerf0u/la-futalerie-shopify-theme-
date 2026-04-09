@@ -109,7 +109,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "",
+        "collection": "frontpage",
         "products_to_show": 4,
         "title": "Nouveautés",
         "heading_size": "h2",
