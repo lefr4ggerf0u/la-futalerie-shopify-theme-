@@ -98,3 +98,13 @@
   margin-top: 0.2rem;
   color: rgba(var(--color-foreground), 0.7);
 }
+
+.price-item__neuf-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.5);
+  margin-bottom: 0.15rem;
+}
