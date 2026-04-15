@@ -108,7 +108,14 @@ a {
   }
 
   .futalerie-hero__overlay {
-    display: none;
+    display: block;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      transparent 40%,
+      var(--lf-charcoal) 75%,
+      var(--lf-charcoal) 100%
+    );
   }
 
   .futalerie-hero__content {
@@ -118,7 +125,7 @@ a {
     flex-direction: column;
     justify-content: center;
     padding: 4rem 3rem;
-    background-color: var(--lf-charcoal);
+    background-color: transparent;
     max-width: none;
     margin: 0;
   }
