@@ -50,7 +50,7 @@
       "settings": {
         "image": "shopify://shop_images/armen-sarkissian-nUzKlI4CtSQ-unsplash.jpg",
         "eyebrow": "Levi's · Carhartt · Dickies · Wrangler · Lee",
-        "title": "Les meilleurs jeans enfin à ta taille.",
+        "title": "Enfin des jeans à ta taille.",
         "subtitle": "Levi's, Carhartt, Dickies vérifiés et mesurés. Mesures précises, contrôle qualité, retour gratuit — zéro mauvaise surprise.",
         "cta_primary_label": "Voir la collection",
         "cta_primary_url": "/collections/all",
@@ -109,7 +109,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "frontpage",
+        "collection": "nouveautes",
         "products_to_show": 4,
         "title": "Nouveautés",
         "heading_size": "h2",
