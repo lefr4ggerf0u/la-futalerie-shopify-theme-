@@ -108,3 +108,11 @@
   color: rgba(var(--color-foreground), 0.5);
   margin-bottom: 0.15rem;
 }
+
+.price__secondhand-tagline {
+  font-size: 0.75rem;
+  color: rgba(var(--color-foreground), 0.45);
+  margin: 0.4rem 0 0;
+  font-style: italic;
+  line-height: 1.4;
+}

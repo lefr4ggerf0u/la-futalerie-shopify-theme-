@@ -118,5 +118,8 @@
         {{ 'products.product.sold_out' | t }}
       </span>
     {%- endif -%}
+    {%- if compare_at_price > price -%}
+      <p class="price__secondhand-tagline">Les meilleures marques premium accessibles grâce à la seconde main.</p>
+    {%- endif -%}
   </div>
 {% endunless %}
