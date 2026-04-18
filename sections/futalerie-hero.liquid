@@ -16,7 +16,7 @@
         sizes: '100vw'
     }}
   {%- elsif section.settings.image_url != blank -%}
-    <img src="{{ section.settings.image_url }}" class="futalerie-hero__image" loading="eager" fetchpriority="high" alt="Hero">
+    <div class="futalerie-hero__image futalerie-hero__image--bg" style="background-image: url('{{ section.settings.image_url }}');"></div>
   {%- else -%}
     <div class="futalerie-hero__image" style="background: linear-gradient(135deg, #2B2B2B 0%, #4A5568 100%);"></div>
   {%- endif -%}

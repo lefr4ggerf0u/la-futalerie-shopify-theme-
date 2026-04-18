@@ -66,6 +66,13 @@ a {
   object-position: center 30%;
 }
 
+.futalerie-hero__image--bg {
+  background-size: 75%;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  background-color: #d4cfc8;
+}
+
 .futalerie-hero__overlay {
   position: absolute;
   inset: 0;
