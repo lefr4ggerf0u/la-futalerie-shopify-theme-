@@ -15,6 +15,8 @@
         widths: '375, 550, 750, 1100, 1500, 1780',
         sizes: '100vw'
     }}
+  {%- elsif section.settings.image_url != blank -%}
+    <img src="{{ section.settings.image_url }}" class="futalerie-hero__image" loading="eager" fetchpriority="high" alt="Hero">
   {%- else -%}
     <div class="futalerie-hero__image" style="background: linear-gradient(135deg, #2B2B2B 0%, #4A5568 100%);"></div>
   {%- endif -%}
@@ -67,6 +69,11 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image de fond"
+    },
+    {
+      "type": "text",
+      "id": "image_url",
+      "label": "URL image (si pas d'image sélectionnée)"
     },
     {
       "type": "text",
