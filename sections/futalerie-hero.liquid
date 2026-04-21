@@ -1,29 +1,10 @@
 {% comment %}
   La Futalerie - Hero Section
-  Custom hero with overlay, double CTA, and trust bar
+  Split layout: text left, image right (inspired by DXL)
 {% endcomment %}
 
 <section class="futalerie-hero">
-  {%- if section.settings.image != blank -%}
-    {{
-      section.settings.image
-      | image_url: width: 1800
-      | image_tag:
-        class: 'futalerie-hero__image',
-        loading: 'eager',
-        fetchpriority: 'high',
-        widths: '375, 550, 750, 1100, 1500, 1780',
-        sizes: '100vw'
-    }}
-  {%- elsif section.settings.image_url != blank -%}
-    <div class="futalerie-hero__image futalerie-hero__image--bg" style="background-image: url('{{ section.settings.image_url }}');"></div>
-  {%- else -%}
-    <div class="futalerie-hero__image" style="background: linear-gradient(135deg, #2B2B2B 0%, #4A5568 100%);"></div>
-  {%- endif -%}
-
-  <div class="futalerie-hero__overlay"></div>
-
-  <div class="futalerie-hero__content">
+  <div class="futalerie-hero__left">
     {%- if section.settings.eyebrow != blank -%}
       <span class="futalerie-hero__eyebrow">{{ section.settings.eyebrow }}</span>
     {%- endif -%}
@@ -57,6 +38,25 @@
         {%- endif -%}
       {%- endfor -%}
     </div>
+  </div>
+
+  <div class="futalerie-hero__right">
+    {%- if section.settings.image != blank -%}
+      {{
+        section.settings.image
+        | image_url: width: 1200
+        | image_tag:
+          class: 'futalerie-hero__image',
+          loading: 'eager',
+          fetchpriority: 'high',
+          widths: '375, 550, 750, 1100',
+          sizes: '50vw'
+      }}
+    {%- elsif section.settings.image_url != blank -%}
+      <div class="futalerie-hero__image futalerie-hero__image--bg" style="background-image: url('{{ section.settings.image_url }}');"></div>
+    {%- else -%}
+      <div class="futalerie-hero__image" style="background: linear-gradient(135deg, #2B2B2B 0%, #4A5568 100%);"></div>
+    {%- endif -%}
   </div>
 </section>
 
