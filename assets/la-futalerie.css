@@ -54,7 +54,11 @@ a {
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  background-color: var(--lf-charcoal);
+  background-color: #c8c3bb;
+  background-image: url('https://cdn.shopify.com/s/files/1/0983/9208/0728/t/2/assets/hero-pile-pantalons.png');
+  background-size: 65%;
+  background-position: center 20%;
+  background-repeat: no-repeat;
 }
 
 .futalerie-hero__image {
