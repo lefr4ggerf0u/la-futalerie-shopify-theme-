@@ -367,6 +367,13 @@ a {
   color: var(--lf-text-light);
 }
 
+.futalerie-reviews__source {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--lf-text-light);
+}
+
 .futalerie-reviews__cta {
   text-align: center;
   margin-top: 2rem;
