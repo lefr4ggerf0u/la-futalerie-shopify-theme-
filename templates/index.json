@@ -49,10 +49,9 @@
       ],
       "settings": {
         "image": "shopify://shop_images/armen-sarkissian-nUzKlI4CtSQ-unsplash.jpg",
-        "image_url": "",
         "eyebrow": "Levi's · Carhartt · Dickies · Wrangler · Lee",
         "title": "Enfin des jeans à ta taille.",
-        "subtitle": "Levi's, Carhartt, Dickies en grande taille  et à prix réduit grâce à la seconde main.",
+        "subtitle": "Levi's, Carhartt, Dickies vérifiés et mesurés. Mesures précises, contrôle qualité, retour gratuit — zéro mauvaise surprise.",
         "cta_primary_label": "Voir la collection",
         "cta_primary_url": "/collections/all",
         "cta_secondary_label": "Comment ça marche ?",
@@ -196,7 +195,7 @@
           "settings": {
             "icon": "🔍",
             "title": "Mesures exactes, photos réelles",
-            "text": "Mesures au centimètre près, afin d'éviter les erreurs."
+            "text": "Mesures au centimètre près, photos non retouchées. Aucune mauvaise surprise à la réception."
           }
         },
         "usp3": {
@@ -226,36 +225,54 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Les mesures étaient exactes au millimètre, le Levi's 501 en parfait état comme décrit. Expédition rapide et soignée. Je recommande sans hésiter.",
-            "author": "Thomas M.",
-            "date": "Il y a 5 jours"
+            "review_text": "Excellent ! Enfin je trouve des pantalons à la taille de mon homme ! Je me suis abonnée pour en racheter au besoin. Les annonces sont hyper bien détaillées, il y a toutes les mesures, ce qui fait qu'il n'y a pas d'erreur possible et les pantalons vont parfaitement. L'état est parfaitement conforme à la description aussi. Réponse et envoi rapide. Je recommande à 100%",
+            "author": "m.",
+            "date": "Il y a 2 mois"
           }
         },
         "r2": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "J'avais peur d'acheter de la seconde main en ligne, mais là aucune déception. Tout est transparent : photos réelles, état honnête, mesures précises. Je recommande.",
-            "author": "Marc L.",
-            "date": "Il y a 2 semaines"
+            "review_text": "Au top, prix très abordable, envoi rapide, que demander de plus ??",
+            "author": "e.",
+            "date": "Il y a 3 semaines"
           }
         },
         "r3": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Sélection de qualité, mesures fiables, pas de négociation, livraison rapide. C'est ma 3ème commande. Je ne cherche plus ailleurs.",
-            "author": "Julien B.",
-            "date": "Il y a 1 semaine"
+            "review_text": "Parfait de A-Z je recommande vivement :)",
+            "author": "s.",
+            "date": "Il y a 1 mois"
           }
         },
         "r4": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Carhartt Double Knee authentique, en excellent état. Photos des étiquettes fournies, tout est vérifié. Service client très réactif.",
-            "author": "David R.",
-            "date": "Il y a 3 jours"
+            "review_text": "2 commandes... parfaites",
+            "author": "a.",
+            "date": "Il y a 2 semaines"
+          }
+        },
+        "r5": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Article au top, je recommande \ud83d\udc4c Merci",
+            "author": "a.",
+            "date": "Il y a 1 semaine"
+          }
+        },
+        "r6": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "parfait merci \ud83d\udc4d",
+            "author": "f.",
+            "date": "Il y a 3 semaines"
           }
         }
       },
@@ -263,7 +280,9 @@
         "r1",
         "r2",
         "r3",
-        "r4"
+        "r4",
+        "r5",
+        "r6"
       ],
       "settings": {
         "title": "Ils nous font confiance",
@@ -367,38 +386,58 @@
     "reviews-2": {
       "type": "futalerie-reviews",
       "blocks": {
-        "r5": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "review_text": "J'ai dû retourner un article (mauvaise taille de ma part). Process super simple, remboursement rapide. Puis j'ai recommandé dans la bonne taille. Top !",
-            "author": "Antoine P.",
-            "date": "Il y a 10 jours"
-          }
-        },
-        "r6": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "review_text": "Qualité constante, mesures fiables, zéro prise de tête. Depuis que j'ai découvert La Futalerie, je ne regarde plus ailleurs.",
-            "author": "Olivier D.",
-            "date": "Il y a 1 mois"
-          }
-        },
         "r7": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Premier achat de seconde main et franchement bluffé. Dickies 874 comme neuf, bien emballé. J'avais des doutes mais là je suis conquis.",
-            "author": "François H.",
+            "review_text": "Au top",
+            "author": "v.",
+            "date": "Il y a 1 semaine"
+          }
+        },
+        "r8": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "super comme dab!",
+            "author": "k.",
             "date": "Il y a 2 semaines"
+          }
+        },
+        "r9": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "item arrived in faster than expected",
+            "author": "b.",
+            "date": "Il y a 3 semaines"
+          }
+        },
+        "r10": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "perfect thank you",
+            "author": "s.",
+            "date": "Il y a 1 mois"
+          }
+        },
+        "r11": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Pantalone ottimo, come al solito",
+            "author": "g.",
+            "date": "Il y a 1 mois"
           }
         }
       },
       "block_order": [
-        "r5",
-        "r6",
-        "r7"
+        "r7",
+        "r8",
+        "r9",
+        "r10",
+        "r11"
       ],
       "settings": {
         "title": "Ce qu'ils en disent",
