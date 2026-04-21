@@ -49,9 +49,10 @@
       ],
       "settings": {
         "image": "shopify://shop_images/armen-sarkissian-nUzKlI4CtSQ-unsplash.jpg",
+        "image_url": "",
         "eyebrow": "Levi's · Carhartt · Dickies · Wrangler · Lee",
         "title": "Enfin des jeans à ta taille.",
-        "subtitle": "Levi's, Carhartt, Dickies vérifiés et mesurés. Mesures précises, contrôle qualité, retour gratuit — zéro mauvaise surprise.",
+        "subtitle": "Levi's, Carhartt, Dickies en grande taille  et à prix réduit grâce à la seconde main.",
         "cta_primary_label": "Voir la collection",
         "cta_primary_url": "/collections/all",
         "cta_secondary_label": "Comment ça marche ?",
@@ -195,7 +196,7 @@
           "settings": {
             "icon": "🔍",
             "title": "Mesures exactes, photos réelles",
-            "text": "Mesures au centimètre près, photos non retouchées. Aucune mauvaise surprise à la réception."
+            "text": "Mesures au centimètre près, afin d'éviter les erreurs."
           }
         },
         "usp3": {
