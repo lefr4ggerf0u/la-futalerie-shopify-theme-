@@ -173,6 +173,9 @@ a {
   .futalerie-hero__right::before {
     background: linear-gradient(to top, var(--lf-charcoal) 0%, transparent 30%);
   }
+  .futalerie-hero__image {
+    object-position: center 60%;
+  }
 }
 
 /* =========================================
