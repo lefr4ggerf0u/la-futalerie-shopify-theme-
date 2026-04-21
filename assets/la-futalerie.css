@@ -166,8 +166,8 @@ a {
   }
   .futalerie-hero__right {
     flex: none;
-    height: 55vw;
-    min-height: 260px;
+    height: 75vw;
+    min-height: 320px;
     order: 1;
   }
   .futalerie-hero__right::before {
