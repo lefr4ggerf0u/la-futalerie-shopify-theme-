@@ -1415,3 +1415,138 @@ details[open] .futalerie-faq__question::after {
     padding: 4rem 4rem;
   }
 }
+
+/* =========================================
+   PRODUCT PAGE — Typography & Layout
+   ========================================= */
+
+/* Vendor */
+.product__info-container .product__text:first-child,
+.product__info-container .product__vendor {
+  font-family: var(--lf-font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lf-camel);
+  margin-bottom: 0.5rem;
+}
+
+/* Title */
+.product__title h1,
+.product__title .h1 {
+  font-family: var(--lf-font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--lf-charcoal);
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+/* Hide the duplicate h2 link Dawn adds */
+.product__title a.product__title {
+  display: none;
+}
+
+/* Price block */
+.price--large .price__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.price--large .price__sale {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.price--large .price-item--regular {
+  font-size: 1rem !important;
+  color: var(--lf-text-light);
+  font-weight: 400;
+}
+
+.price--large .price-item--sale {
+  font-size: 1.6rem !important;
+  font-weight: 700;
+  color: var(--lf-charcoal);
+}
+
+.price-item__neuf-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--lf-text-light);
+  margin-bottom: 0.2rem;
+}
+
+/* Tagline secondhand */
+.price__secondhand-tagline {
+  font-size: 0.78rem;
+  color: var(--lf-text-light);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Taxes */
+.product__tax {
+  font-size: 0.75rem;
+  color: var(--lf-text-light);
+  margin-top: 0.25rem;
+}
+
+/* Inventory badge "Pièce unique" */
+.product__inventory {
+  display: none;
+}
+
+/* Variant picker label */
+.product-form__input label,
+.variant-picker__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lf-charcoal);
+}
+
+/* Variant buttons */
+.swatch-input__input ~ .swatch__label,
+fieldset.js-enabled .product-form__input .button {
+  border: 1.5px solid var(--lf-border);
+  border-radius: var(--lf-radius);
+  font-weight: 600;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+/* Description */
+.product__description {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--lf-charcoal);
+  border-top: 1px solid var(--lf-border);
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+}
+
+.product__description ul {
+  padding-left: 1.2rem;
+  margin: 0.75rem 0;
+}
+
+.product__description li {
+  margin-bottom: 0.35rem;
+}
+
+/* Add to cart button */
+.product-form__submit {
+  border-radius: var(--lf-radius) !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  font-size: 0.9rem !important;
+}
