@@ -11,6 +11,10 @@
 
     <h1 class="futalerie-hero__title">{{ section.settings.title | escape }}</h1>
 
+    {%- if section.settings.tagline != blank -%}
+      <p class="futalerie-hero__tagline">{{ section.settings.tagline | escape }}</p>
+    {%- endif -%}
+
     {%- if section.settings.subtitle != blank -%}
       <p class="futalerie-hero__subtitle">{{ section.settings.subtitle | escape }}</p>
     {%- endif -%}
@@ -86,6 +90,12 @@
       "id": "title",
       "label": "Titre principal",
       "default": "Enfin des jeans à ta taille."
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline (sous le titre)",
+      "default": "Grâce à la seconde main."
     },
     {
       "type": "textarea",
