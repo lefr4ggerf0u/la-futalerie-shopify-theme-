@@ -101,7 +101,7 @@ a {
 .futalerie-hero__eyebrow {
   display: inline-block;
   font-family: var(--lf-font-body);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -111,14 +111,14 @@ a {
 
 .futalerie-hero__title {
   font-family: var(--lf-font-heading);
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
   color: #FFFFFF;
   margin: 0 0 1.25rem;
   line-height: 1.1;
 }
 
 .futalerie-hero__subtitle {
-  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
   color: rgba(255, 255, 255, 0.80);
   margin: 0 0 2.5rem;
   max-width: 480px;
